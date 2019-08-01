@@ -1,0 +1,69 @@
+body {
+  color: black;
+  font-family: "Roboto", sans-serif;
+}
+body header {
+  overflow: hidden;
+}
+body header a img {
+  width: 120px;
+  float: left;
+  background-color: black;
+}
+body header section {
+  font-size: 20px;
+  width: 90%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  float: right;
+}
+body header section img {
+  width: 20px;
+  margin-right: 10px;
+}
+body header section input {
+  font-size: 20px;
+  border: none;
+}
+body div {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+body div .featureNav {
+  float: left;
+  width: 120px;
+  height: 600px;
+}
+body div .featureNav ul {
+  list-style: none;
+  text-align: center;
+}
+body div .featureNav ul li a {
+  text-decoration: none;
+  color: black;
+}
+body div .featureNav ul li a img {
+  width: 20px;
+}
+body div .featureNav ul li a p {
+  font-size: 15px;
+}
+body div .banner {
+  overflow: hidden;
+  width: 90%;
+  height: 600px;
+  background-image: url(../image/banner.jpg);
+  background-size: cover;
+  float: right;
+  display: flex;
+  justify-content: center;
+}
+body div .banner h1 {
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 120px;
+}
+
+/*# sourceMappingURL=style.css.map */

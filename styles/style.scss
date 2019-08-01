@@ -1,0 +1,102 @@
+$mainFont: 'Roboto', sans-serif;
+$fontTitle: 'Josefin Sans', sans-serif;
+
+body{
+    
+    color: black;
+    font-family: $mainFont;
+    header{
+        overflow: hidden;
+        a{
+            img{
+                width: 120px;
+                float: left;
+                background-color: black;
+            }
+        }
+        section{
+            font-size: 20px;
+            width: 90%;
+            height: 90px;
+            display: flex;
+            //justify-content: center;
+            align-items: center;
+
+            float: right;
+            img{
+                width: 20px;
+                margin-right: 10px;
+            }
+            input{
+                font-size: 20px;
+                border: none;
+                
+            }
+        }
+    }
+    div{
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        .featureNav{
+            float: left;
+            width: 120px;
+            height: 600px;
+            ul{
+                list-style: none;
+                text-align: center;
+                li{
+                    a{
+                        text-decoration: none;
+                        color: black;
+                        img{
+                            width: 20px;
+                        }
+                        p{
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        .banner{
+            overflow: hidden;
+            width: 90%;
+            height: 600px;
+            background-image: url(../image/banner.jpg);
+            background-size: cover; 
+            float: right;
+            display: flex;
+            justify-content: center;
+            h1{
+                color: white;
+                font-family: $fontTitle;
+                font-size: 120px;
+
+            }
+        }
+    }    
+    .section{
+        
+        div{
+            h3{
+
+            }
+            a{
+
+            }
+        }
+        ul{
+            li{
+                a{
+                    img{
+
+                    }
+                    p{
+
+                    }
+                }
+            }
+        }
+    }
+}
