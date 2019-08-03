@@ -30,9 +30,10 @@ body header {
   position: fixed;
   z-index: 99999;
   background-color: white;
+  display: flex;
 }
 body header a img {
-  width: 8%;
+  width: 90px;
   float: left;
   background-color: black;
 }
@@ -55,6 +56,7 @@ body header section input {
 }
 body header div.dropdownIcon {
   display: none;
+  height: 100px;
 }
 @media (max-width: 500px) {
   body header div.dropdownIcon {
@@ -100,7 +102,7 @@ body div.bannerContainer .featureNav ul {
 @media (max-width: 500px) {
   body div.bannerContainer .featureNav ul {
     flex-direction: row;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
   }
 }
 body div.bannerContainer .featureNav ul li {
