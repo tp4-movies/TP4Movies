@@ -92,9 +92,10 @@ body{
             float: left;
             width: 10%;
             height: 600px;
-            margin-top: 100px;
             z-index: 999;
+            position: fixed;
             @media(max-width: $small-break){
+                margin-top: 100px;
                 position: absolute;
                 float: none;
                 width: 100%;
@@ -104,21 +105,22 @@ body{
             ul{
                 list-style: none;
                 text-align: center;
-                height: 600px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-content: center;
+                height: calc(100vh - 100px);
                 @media(max-width: $small-break){
                     flex-direction: row;
                     background-color: $transparent-white;
+                    
                 }
                 li{
                     margin: auto;
                     width: 120px;
-                    height: 150px; 
+                    height: calc((100vh - 100px)/4); 
                     border: 1px dotted grey;
-                    margin-bottom: 10px;
+                    background-color: $transparent-white;
                     @media(max-width: $small-break){
                         margin: 0;
                     }
@@ -127,7 +129,7 @@ body{
                         color: black;
                         img{
                             width: 20px;
-                            margin-top: 50px;
+                            margin-top: 5px;
                         }
                         p{
                             font-size: 15px;
