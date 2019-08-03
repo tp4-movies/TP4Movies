@@ -27,6 +27,9 @@ body {
 }
 body header {
   overflow: hidden;
+  position: fixed;
+  z-index: 99999;
+  background-color: white;
 }
 body header a img {
   width: 8%;
@@ -50,18 +53,42 @@ body header section input {
   font-size: 20px;
   border: none;
 }
-body div {
+body header div.dropdownIcon {
+  display: none;
+}
+@media (max-width: 500px) {
+  body header div.dropdownIcon {
+    display: block;
+  }
+}
+body div.bannerContainer {
   overflow: hidden;
   display: flex;
   justify-content: space-between;
+  padding-top: 100px;
 }
-body div .featureNav {
+@media (max-width: 500px) {
+  body div.bannerContainer {
+    position: relative;
+  }
+}
+body div.bannerContainer .featureNav {
   float: left;
   width: 10%;
   height: 600px;
-  margin: 0;
+  margin-top: 100px;
+  z-index: 999;
 }
-body div .featureNav ul {
+@media (max-width: 500px) {
+  body div.bannerContainer .featureNav {
+    position: absolute;
+    float: none;
+    width: 100%;
+    top: 0;
+    position: fixed;
+  }
+}
+body div.bannerContainer .featureNav ul {
   list-style: none;
   text-align: center;
   height: 600px;
@@ -70,25 +97,36 @@ body div .featureNav ul {
   justify-content: center;
   align-content: center;
 }
-body div .featureNav ul li {
+@media (max-width: 500px) {
+  body div.bannerContainer .featureNav ul {
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+body div.bannerContainer .featureNav ul li {
   margin: auto;
   width: 120px;
   height: 150px;
   border: 1px dotted grey;
   margin-bottom: 10px;
 }
-body div .featureNav ul li a {
+@media (max-width: 500px) {
+  body div.bannerContainer .featureNav ul li {
+    margin: 0;
+  }
+}
+body div.bannerContainer .featureNav ul li a {
   text-decoration: none;
   color: black;
 }
-body div .featureNav ul li a img {
+body div.bannerContainer .featureNav ul li a img {
   width: 20px;
   margin-top: 50px;
 }
-body div .featureNav ul li a p {
+body div.bannerContainer .featureNav ul li a p {
   font-size: 15px;
 }
-body div .banner {
+body div.bannerContainer .banner {
   overflow: hidden;
   width: 90%;
   height: 600px;
@@ -98,13 +136,25 @@ body div .banner {
   display: flex;
   margin: 0;
 }
-body div .banner h1 {
+@media (max-width: 500px) {
+  body div.bannerContainer .banner {
+    width: 100%;
+  }
+}
+body div.bannerContainer .banner h1 {
   color: white;
   font-family: "Josefin Sans", sans-serif;
   font-size: 110px;
   margin-top: 30px;
   margin-left: 40px;
   float: left;
+}
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
