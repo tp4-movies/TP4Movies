@@ -31,6 +31,8 @@ body header {
   z-index: 99999;
   background-color: white;
   display: flex;
+  height: 100px;
+  width: 100%;
 }
 body header a img {
   width: 90px;
@@ -57,8 +59,12 @@ body header .find input {
 body header div.dropdownIcon {
   display: none;
   height: 100px;
+  font-size: 50px;
 }
-@media (max-width: 500px) {
+body header div.dropdownIcon i {
+  padding: 20px;
+}
+@media (max-width: 700px) {
   body header div.dropdownIcon {
     display: block;
   }
@@ -69,7 +75,7 @@ body div.bannerContainer {
   justify-content: space-between;
   padding-top: 100px;
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   body div.bannerContainer {
     position: relative;
   }
@@ -81,7 +87,7 @@ body div.bannerContainer .featureNav {
   margin-top: 100px;
   z-index: 999;
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   body div.bannerContainer .featureNav {
     position: absolute;
     float: none;
@@ -99,7 +105,7 @@ body div.bannerContainer .featureNav ul {
   justify-content: center;
   align-content: center;
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   body div.bannerContainer .featureNav ul {
     flex-direction: row;
     background-color: rgba(255, 255, 255, 0.9);
@@ -112,7 +118,7 @@ body div.bannerContainer .featureNav ul li {
   border: 1px dotted grey;
   margin-bottom: 10px;
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   body div.bannerContainer .featureNav ul li {
     margin: 0;
   }
@@ -138,7 +144,7 @@ body div.bannerContainer .banner {
   display: flex;
   margin: 0;
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   body div.bannerContainer .banner {
     width: 100%;
   }
