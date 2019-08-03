@@ -1,3 +1,26 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, section,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  list-style: none;
+  background-color: none;
+}
+
 body {
   color: black;
   font-family: "Roboto", sans-serif;
@@ -6,7 +29,7 @@ body header {
   overflow: hidden;
 }
 body header a img {
-  width: 120px;
+  width: 8%;
   float: left;
   background-color: black;
 }
@@ -17,10 +40,11 @@ body header section {
   display: flex;
   align-items: center;
   float: right;
+  padding-top: 18px;
 }
 body header section img {
   width: 20px;
-  margin-right: 10px;
+  margin: 0 30px;
 }
 body header section input {
   font-size: 20px;
@@ -33,12 +57,25 @@ body div {
 }
 body div .featureNav {
   float: left;
-  width: 120px;
+  width: 10%;
   height: 600px;
+  margin: 0;
 }
 body div .featureNav ul {
   list-style: none;
   text-align: center;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+body div .featureNav ul li {
+  margin: auto;
+  width: 120px;
+  height: 150px;
+  border: 1px dotted grey;
+  margin-bottom: 10px;
 }
 body div .featureNav ul li a {
   text-decoration: none;
@@ -46,6 +83,7 @@ body div .featureNav ul li a {
 }
 body div .featureNav ul li a img {
   width: 20px;
+  margin-top: 50px;
 }
 body div .featureNav ul li a p {
   font-size: 15px;
@@ -58,12 +96,15 @@ body div .banner {
   background-size: cover;
   float: right;
   display: flex;
-  justify-content: center;
+  margin: 0;
 }
 body div .banner h1 {
   color: white;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 120px;
+  font-size: 110px;
+  margin-top: 30px;
+  margin-left: 40px;
+  float: left;
 }
 
 /*# sourceMappingURL=style.css.map */
