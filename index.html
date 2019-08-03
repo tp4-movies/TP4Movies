@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href= "image/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700|Roboto:300,400,500&amp&display=swap;subset=cyrillic" rel="stylesheet">
     <title>Movie Page</title>
+    <script src="main.js" type="text/javascript"></script>
 </head>
 <body>
     <header>
@@ -18,9 +19,12 @@
             <img src="image/search.png" alt="">
             <input type="text" placeholder="Search for a movie..."></input>
         </section>
+        <div class="dropdownIcon">
+            <a href="#" onclick="dropdownMenu()"><i class="fas fa-bars"></i></a>
+        </div>
     </header>
-    <div>
-        <nav class="featureNav">
+    <div class="bannerContainer">
+        <nav class="featureNav" id="featureNav">
             <ul>
                 <li>
                     <a href="">
