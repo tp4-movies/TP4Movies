@@ -27,9 +27,15 @@ body {
 }
 body header {
   overflow: hidden;
+  position: fixed;
+  z-index: 99999;
+  background-color: white;
+  display: flex;
+  height: 100px;
+  width: 100%;
 }
 body header a img {
-  width: 8%;
+  width: 90px;
   float: left;
   background-color: black;
 }
@@ -50,55 +56,100 @@ body header .find input {
   font-size: 20px;
   border: none;
 }
-body div {
+body header div.dropdownIcon {
+  display: none;
+  height: 100px;
+  font-size: 50px;
+}
+body header div.dropdownIcon i {
+  padding: 20px;
+}
+@media (max-width: 700px) {
+  body header div.dropdownIcon {
+    display: block;
+  }
+}
+body div.bannerContainer {
   overflow: hidden;
   display: flex;
   justify-content: space-between;
+  padding-top: 100px;
 }
-body div .featureNav {
+@media (max-width: 700px) {
+  body div.bannerContainer {
+    position: relative;
+  }
+}
+body div.bannerContainer .featureNav {
   float: left;
   width: 10%;
   height: 600px;
-  margin: 0;
+  z-index: 999;
+  position: fixed;
 }
-body div .featureNav ul {
+@media (max-width: 700px) {
+  body div.bannerContainer .featureNav {
+    margin-top: 100px;
+    position: absolute;
+    float: none;
+    width: 100%;
+    top: 0;
+    position: fixed;
+  }
+}
+body div.bannerContainer .featureNav ul {
   list-style: none;
   text-align: center;
-  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  height: calc(100vh - 100px);
 }
-body div .featureNav ul li {
+@media (max-width: 700px) {
+  body div.bannerContainer .featureNav ul {
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}
+body div.bannerContainer .featureNav ul li {
   margin: auto;
   width: 120px;
-  height: 150px;
+  height: calc((100vh - 100px)/4);
   border: 1px dotted grey;
-  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
-body div .featureNav ul li a {
+@media (max-width: 700px) {
+  body div.bannerContainer .featureNav ul li {
+    margin: 0;
+  }
+}
+body div.bannerContainer .featureNav ul li a {
   text-decoration: none;
   color: black;
 }
-body div .featureNav ul li a img {
+body div.bannerContainer .featureNav ul li a img {
   width: 20px;
-  margin-top: 50px;
+  margin-top: 5px;
 }
-body div .featureNav ul li a p {
+body div.bannerContainer .featureNav ul li a p {
   font-size: 15px;
 }
-body div .banner {
-  overflow: hidden;
-  width: 90%;
-  height: 600px;
+body div.bannerContainer .banner {
+  padding-left: 120px;
+  height: calc(100vh - 100px);
   background-image: url(../image/banner.jpg);
   background-size: cover;
-  float: right;
+  background-position: right top;
+  background-repeat: no-repeat;
   display: flex;
-  margin: 0;
 }
-body div .banner h1 {
+@media (max-width: 700px) {
+  body div.bannerContainer .banner {
+    width: 100%;
+  }
+}
+body div.bannerContainer .banner h1 {
   color: white;
   font-family: "Josefin Sans", sans-serif;
   font-size: 110px;
@@ -107,10 +158,11 @@ body div .banner h1 {
   float: left;
 }
 body .movies {
-  margin: 60px 50px 60px 150px;
+  padding-left: 120px;
+  margin: 60px 0;
 }
 body .movies div {
-  margin: 10px 0;
+  margin: 10px;
 }
 body .movies div h3 {
   font-size: 18px;
@@ -129,17 +181,27 @@ body .movies div a p {
 body .movies ul {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: 20px 0;
+  padding-left: 10px;
 }
 body .movies ul li a {
   text-decoration: none;
   color: grey;
 }
 body .movies ul li a img {
-  width: 180px;
+  max-width: 200px;
 }
 body .movies ul li a p {
   font-size: 15px;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
