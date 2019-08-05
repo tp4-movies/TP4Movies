@@ -23,6 +23,7 @@ time, mark, audio, video {
 
 $mainFont: 'Roboto', sans-serif;
 $fontTitle: 'Josefin Sans', sans-serif;
+$mainColor: #ff5757;
 
 $small-break: 700px;
 
@@ -43,17 +44,18 @@ body{
         height: 100px;
         width: 100%;
         a{
+            background-color: $mainColor;
             img{
-                width: 90px;
+                width: 88px;
                 float: left;
-                background-color: black;
                 
+                margin: 0 20px;
             }
         }
         .find
         {
             font-size: 20px;
-            width: 90%;
+            width: 88%;
             height: 90px;
             display: flex;
             align-items: center;
@@ -84,7 +86,7 @@ body{
     }
     div.bannerContainer{
         overflow: hidden;
-        display: flex;
+        //display: flex;
         justify-content: space-between;
         padding-top: 100px;
         @media(max-width: $small-break){
@@ -112,6 +114,7 @@ body{
                 justify-content: center;
                 align-content: center;
                 height: calc(100vh - 100px);
+                
                 @media(max-width: $small-break){
                     flex-direction: row;
                     background-color: $transparent-white;
@@ -131,7 +134,7 @@ body{
                         color: black;
                         img{
                             width: 20px;
-                            margin-top: 5px;
+                            margin-top: 50px;
                         }
                         p{
                             font-size: 15px;
@@ -143,50 +146,48 @@ body{
         .banner{
             padding-left: $margin-left;
             height: calc(100vh - 100px);
-            background-image: url(../image/banner.jpg);
+            background-image: url(../image/banner5.jpg);
             background-size: cover; 
             background-position: right top;
             background-repeat: no-repeat;
+            
             display: flex;
-            //justify-content: center;
+            //float: right;
+            
             @media(max-width: $small-break){
                 width: 100%;
             }
             h1{
                 color: white;
                 font-family: $fontTitle;
-                font-size: 110px;
-                margin-top: 30px;
-                margin-left: 40px;
+                font-size: 130px;
+                margin-top: 40px;
+                margin-left: 50px;
                 float: left;
 
             }
         }
     }    
     .movies{
-<<<<<<< HEAD
-        margin: 60px 50px 60px 150px;
-=======
-        padding-left: $margin-left;
-        margin: 60px 0;
->>>>>>> 5fbda45474652ca7d05d14a108708daf8bab9812
+        margin: 100px 40px 100px 150px;
         div{
             margin: 10px;
+            overflow: hidden;
             h3{
                 font-size: 18px;
                 color: grey;
                 margin-left: 10px;
+                float: left;
             }
             a{
                 text-decoration: none;
                 margin-right: 10px;
+                float: right;
                 p{
                     font-size: 15px;
                     color: grey;
                     margin-right: 10px;
                 }
-                
-                    
             }
         }
         ul{
@@ -210,13 +211,69 @@ body{
         }
     }
 }
-
-
-
 .show{
     display: block;
 }
-
 .hide{
     display: none;
 }
+
+//  ESTILO DEL MODAL 
+// .newSaleModal{
+//     margin: 0 auto;
+//     max-width: 300px;
+//     clear: both;
+//     display: flex;
+//     flex-direction: column;
+//     border: 1px solid $main-color;
+//     padding: 20px;
+//     background-color: $main-color-transparent;
+//     select{
+//         margin-top: 10px;
+//     }
+//     a{
+//         display: block;
+//     }
+//     select{
+//         width: 100%;
+//         font-size: 16px;
+//         padding: 10px;
+//         border: 1px solid $main-color;
+//     }
+//     .deleteBtn{
+//         width: 15px;
+//     }
+//     a.confirmBtn{
+//         @include NewSaleBtn();
+//     }
+//     a.cancelSale{
+//         text-align: right;
+//         font-size: 20px;
+//         margin-bottom: 20px;
+//         color: $main-color;
+//         padding: 8px 10px;
+//         float: right;
+//         &:hover{
+//            background-color: $main-color; 
+//            color: $contrastive-letter-color;
+//            transition: all 0.5s;
+//         }
+//     }
+//     a.addBtn{
+//         text-align: center;
+//         margin: 20px;
+//     }
+//     ul.showNewComponent li, .newSaleContainer p, .messageConfirmNewSale p{
+//         background-color: $contrastive-letter-color;
+//         padding: 10px;
+//         margin: 0;
+//     }
+// }
+
+// .hide{
+//     display: none;
+// }
+
+// .show{
+//     display: block;
+// }
