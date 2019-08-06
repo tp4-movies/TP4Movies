@@ -21,19 +21,23 @@ time, mark, audio, video {
   background-color: none;
 }
 
+input:focus {
+  outline: none !important;
+}
+
 body {
   color: black;
   font-family: "Roboto", sans-serif;
 }
 body header {
-  position: fixed;
   z-index: 99999;
   background-color: white;
   display: grid;
   grid-template-columns: 100px auto 100px;
   height: 100px;
   width: 100%;
-  position: relative;
+  position: fixed;
+  outline: none;
 }
 body header a {
   background-color: #ff5757;
@@ -84,6 +88,7 @@ body header div.dropdownIcon i {
   }
 }
 body div.bannerContainer {
+  padding-top: 100px;
   overflow: hidden;
   justify-content: space-between;
 }
@@ -122,6 +127,7 @@ body div.bannerContainer .featureNav ul {
   body div.bannerContainer .featureNav ul {
     flex-direction: row;
     background-color: rgba(255, 255, 255, 0.9);
+    flex-wrap: wrap;
   }
 }
 body div.bannerContainer .featureNav ul li {
@@ -133,7 +139,7 @@ body div.bannerContainer .featureNav ul li {
 }
 @media (max-width: 700px) {
   body div.bannerContainer .featureNav ul li {
-    margin: 0;
+    margin: 10px;
   }
 }
 body div.bannerContainer .featureNav ul li a {

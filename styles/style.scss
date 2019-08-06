@@ -31,18 +31,22 @@ $transparent-white: rgba(255,255,255, 0.9);
 
 $margin-left: 120px;
 
+input{
+    &:focus {outline:none !important}
+}
+
 body{
     color: black;
     font-family: $mainFont;
     header{
-        position: fixed;
         z-index: 99999;
         background-color: white;
         display: grid;
         grid-template-columns: 100px auto 100px;
         height: 100px;
         width: 100%;
-        position: relative;
+        position: fixed;
+        outline: none;
         a{
             background-color: $mainColor;
             width: 100px;
@@ -91,6 +95,7 @@ body{
         }
     }
     div.bannerContainer{
+        padding-top: 100px;
         overflow: hidden;
         //display: flex;
         justify-content: space-between;
@@ -119,11 +124,10 @@ body{
                 justify-content: center;
                 align-content: center;
                 height: calc(100vh - 100px);
-                
                 @media(max-width: $small-break){
                     flex-direction: row;
                     background-color: $transparent-white;
-                    
+                    flex-wrap: wrap;
                 }
                 li{
                     margin: auto;
@@ -132,7 +136,7 @@ body{
                     border: 1px dotted grey;
                     background-color: $transparent-white;
                     @media(max-width: $small-break){
-                        margin: 0;
+                        margin: 10px;
                     }
                     a{
                         text-decoration: none;
@@ -158,10 +162,7 @@ body{
             background-size: cover; 
             background-position: right top;
             background-repeat: no-repeat;
-            
             display: flex;
-            //float: right;
-            
             @media(max-width: $small-break){
                 width: 100%;
             }
