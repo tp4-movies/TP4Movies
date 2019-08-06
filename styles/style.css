@@ -168,6 +168,7 @@ body div.bannerContainer .banner {
 @media (max-width: 700px) {
   body div.bannerContainer .banner {
     width: 100%;
+    padding-left: 0;
   }
 }
 body div.bannerContainer .banner h1 {
@@ -177,6 +178,14 @@ body div.bannerContainer .banner h1 {
   margin-top: 40px;
   margin-left: 50px;
   float: left;
+}
+@media (max-width: 700px) {
+  body div.bannerContainer .banner h1 {
+    margin-left: 10px;
+    display: inline-block;
+    text-align: center;
+    font-size: 80px;
+  }
 }
 body .movies {
   margin: 100px 40px 100px 150px;

@@ -165,6 +165,7 @@ body{
             display: flex;
             @media(max-width: $small-break){
                 width: 100%;
+                padding-left: 0;
             }
             h1{
                 color: white;
@@ -173,7 +174,12 @@ body{
                 margin-top: 40px;
                 margin-left: 50px;
                 float: left;
-
+                @media(max-width: $small-break){
+                    margin-left: 10px;
+                    display: inline-block;
+                    text-align: center;
+                    font-size: 80px;
+                }
             }
         }
     }    
