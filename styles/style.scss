@@ -32,7 +32,6 @@ $transparent-white: rgba(255,255,255, 0.9);
 $margin-left: 120px;
 
 body{
-    
     color: black;
     font-family: $mainFont;
     header{
@@ -48,12 +47,10 @@ body{
             img{
                 width: 88px;
                 float: left;
-                
                 margin: 0 20px;
             }
         }
-        .find
-        {
+        .find{
             font-size: 20px;
             width: 88%;
             height: 90px;
@@ -61,7 +58,6 @@ body{
             align-items: center;
             float: right;
             padding-top: 18px;
-            
             img{
                 width: 20px;
                 margin: 0 30px;
@@ -69,7 +65,6 @@ body{
             input{
                 font-size: 20px;
                 border: none;
-                
             }
         }
         div.dropdownIcon{
