@@ -199,7 +199,72 @@ body .movies ul li a img {
 body .movies ul li a p {
   font-size: 15px;
 }
-
+body .movieModal {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  background-color: #9c9c9c;
+  position: relative;
+}
+body .movieModal .boxMovie {
+  max-width: 800px;
+  height: 1400px;
+  margin: 300px;
+  z-index: 0;
+  position: absolute;
+}
+body .movieModal .boxMovie a {
+  text-decoration: none;
+}
+body .movieModal .boxMovie a i {
+  font-size: 30px;
+  color: #ff5757;
+  position: absolute;
+  z-index: 2;
+  right: -720px;
+  top: 10px;
+}
+body .movieModal .boxMovie .backImage {
+  max-width: 800px;
+  position: absolute;
+  z-index: 1;
+  opacity: 0.4;
+}
+body .movieModal .boxMovie .frontImage {
+  width: 300px;
+  position: absolute;
+  z-index: 2;
+  top: 50px;
+  left: 50px;
+}
+body .movieModal .boxMovie .title {
+  font-size: 40px;
+  color: #ff5757;
+  position: absolute;
+  z-index: 2;
+  top: 150px;
+  right: -660px;
+  float: right;
+  text-shadow: 2px 2px 2px black;
+}
+body .movieModal .boxMovie .subtitle {
+  font-size: 15px;
+  position: absolute;
+  z-index: 2;
+  top: 210px;
+  right: -580px;
+}
+body .movieModal .boxMovie .boxInfo {
+  position: absolute;
+}
+body .movieModal .boxMovie .boxInfo .summary {
+  width: 350px;
+  text-align: justify;
+  font-size: 15px;
+  position: absolute;
+  z-index: 1;
+  top: 400px;
+  right: -700px;
+}
 .show {
   display: block;
 }
