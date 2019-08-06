@@ -29,29 +29,27 @@ body header {
   position: fixed;
   z-index: 99999;
   background-color: white;
-  display: grid;
-  grid-template-columns: 100px auto 100px;
+  display: flex;
   height: 100px;
   width: 100%;
-  position: relative;
 }
 body header a {
   background-color: #ff5757;
   width: 100px;
-  border: 1px solid #ff5757;
-  display: block;
 }
 body header a img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80px;
+  width: 88px;
+  float: left;
+  margin: 0 20px;
 }
 body header .find {
   font-size: 20px;
+  width: 88%;
+  height: 90px;
   display: flex;
   align-items: center;
   float: right;
+  padding-top: 18px;
 }
 body header .find img {
   width: 20px;
@@ -65,18 +63,9 @@ body header div.dropdownIcon {
   display: none;
   height: 100px;
   font-size: 50px;
-  float: right;
-  position: absolute;
-  right: 0;
-}
-body header div.dropdownIcon a {
-  height: 100%;
-  text-align: center;
-  text-justify: center;
-  border: none;
 }
 body header div.dropdownIcon i {
-  line-height: 100px;
+  padding: 20px;
 }
 @media (max-width: 700px) {
   body header div.dropdownIcon {
@@ -86,6 +75,7 @@ body header div.dropdownIcon i {
 body div.bannerContainer {
   overflow: hidden;
   justify-content: space-between;
+  padding-top: 100px;
 }
 @media (max-width: 700px) {
   body div.bannerContainer {
@@ -126,7 +116,7 @@ body div.bannerContainer .featureNav ul {
 }
 body div.bannerContainer .featureNav ul li {
   margin: auto;
-  width: 100px;
+  width: 120px;
   height: calc((100vh - 100px)/4);
   border: 1px dotted grey;
   background-color: rgba(255, 255, 255, 0.9);
@@ -141,11 +131,8 @@ body div.bannerContainer .featureNav ul li a {
   color: black;
 }
 body div.bannerContainer .featureNav ul li a img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
   width: 20px;
+  margin-top: 50px;
 }
 body div.bannerContainer .featureNav ul li a p {
   font-size: 15px;
@@ -221,4 +208,4 @@ body .movies ul li a p {
   display: none;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=.css.map */
