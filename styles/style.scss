@@ -31,33 +31,39 @@ $transparent-white: rgba(255,255,255, 0.9);
 
 $margin-left: 120px;
 
+input{
+    &:focus {outline:none !important}
+}
+
 body{
     color: black;
     font-family: $mainFont;
     header{
-        overflow: hidden;
-        position: fixed;
         z-index: 99999;
         background-color: white;
-        display: flex;
+        display: grid;
+        grid-template-columns: 100px auto 100px;
         height: 100px;
         width: 100%;
+        position: fixed;
+        outline: none;
         a{
             background-color: $mainColor;
+            width: 100px;
+            border: 1px solid $mainColor;
+            display: block;
             img{
-                width: 88px;
-                float: left;
-                margin: 0 20px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 80px;
             }
         }
         .find{
             font-size: 20px;
-            width: 88%;
-            height: 90px;
             display: flex;
             align-items: center;
             float: right;
-            padding-top: 18px;
             img{
                 width: 20px;
                 margin: 0 30px;
@@ -71,8 +77,17 @@ body{
             display: none;
             height: 100px;
             font-size: 50px;
+            float: right;
+            position: absolute;
+            right: 0;
+            a{
+                height: 100%;
+                text-align: center;
+                text-justify: center;
+                border: none;
+            }
             i{
-                padding: 20px;
+                line-height: 100px;
             }
             @media(max-width: $small-break){
                 display: block;
@@ -80,16 +95,16 @@ body{
         }
     }
     div.bannerContainer{
+        padding-top: 100px;
         overflow: hidden;
         //display: flex;
         justify-content: space-between;
-        padding-top: 100px;
         @media(max-width: $small-break){
             position: relative;
         }
         .featureNav{
             float: left;
-            width: 10%;
+            width: 100px;
             height: 600px;
             z-index: 999;
             position: fixed;
@@ -109,27 +124,29 @@ body{
                 justify-content: center;
                 align-content: center;
                 height: calc(100vh - 100px);
-                
                 @media(max-width: $small-break){
                     flex-direction: row;
                     background-color: $transparent-white;
-                    
+                    flex-wrap: wrap;
                 }
                 li{
                     margin: auto;
-                    width: $margin-left;
+                    width: 100px;
                     height: calc((100vh - 100px)/4); 
                     border: 1px dotted grey;
                     background-color: $transparent-white;
                     @media(max-width: $small-break){
-                        margin: 0;
+                        margin: 10px;
                     }
                     a{
                         text-decoration: none;
                         color: black;
                         img{
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                            margin-top: 30px;
                             width: 20px;
-                            margin-top: 50px;
                         }
                         p{
                             font-size: 15px;
@@ -145,12 +162,10 @@ body{
             background-size: cover; 
             background-position: right top;
             background-repeat: no-repeat;
-            
             display: flex;
-            //float: right;
-            
             @media(max-width: $small-break){
                 width: 100%;
+                padding-left: 0;
             }
             h1{
                 color: white;
@@ -159,7 +174,12 @@ body{
                 margin-top: 40px;
                 margin-left: 50px;
                 float: left;
-
+                @media(max-width: $small-break){
+                    margin-left: 10px;
+                    display: inline-block;
+                    text-align: center;
+                    font-size: 80px;
+                }
             }
         }
     }    

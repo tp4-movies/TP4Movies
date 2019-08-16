@@ -21,41 +21,35 @@ time, mark, audio, video {
   background-color: none;
 }
 
-input:focus {
-  outline: none !important;
-}
-
 body {
   color: black;
   font-family: "Roboto", sans-serif;
 }
 body header {
+  position: fixed;
   z-index: 99999;
   background-color: white;
-  display: grid;
-  grid-template-columns: 100px auto 100px;
+  display: flex;
   height: 100px;
   width: 100%;
-  position: fixed;
-  outline: none;
 }
 body header a {
   background-color: #ff5757;
   width: 100px;
-  border: 1px solid #ff5757;
-  display: block;
 }
 body header a img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80px;
+  width: 88px;
+  float: left;
+  margin: 0 20px;
 }
 body header .find {
   font-size: 20px;
+  width: 88%;
+  height: 90px;
   display: flex;
   align-items: center;
   float: right;
+  padding-top: 18px;
 }
 body header .find img {
   width: 20px;
@@ -69,18 +63,9 @@ body header div.dropdownIcon {
   display: none;
   height: 100px;
   font-size: 50px;
-  float: right;
-  position: absolute;
-  right: 0;
-}
-body header div.dropdownIcon a {
-  height: 100%;
-  text-align: center;
-  text-justify: center;
-  border: none;
 }
 body header div.dropdownIcon i {
-  line-height: 100px;
+  padding: 20px;
 }
 @media (max-width: 700px) {
   body header div.dropdownIcon {
@@ -88,9 +73,9 @@ body header div.dropdownIcon i {
   }
 }
 body div.bannerContainer {
-  padding-top: 100px;
   overflow: hidden;
   justify-content: space-between;
+  padding-top: 100px;
 }
 @media (max-width: 700px) {
   body div.bannerContainer {
@@ -127,19 +112,18 @@ body div.bannerContainer .featureNav ul {
   body div.bannerContainer .featureNav ul {
     flex-direction: row;
     background-color: rgba(255, 255, 255, 0.9);
-    flex-wrap: wrap;
   }
 }
 body div.bannerContainer .featureNav ul li {
   margin: auto;
-  width: 100px;
+  width: 120px;
   height: calc((100vh - 100px)/4);
   border: 1px dotted grey;
   background-color: rgba(255, 255, 255, 0.9);
 }
 @media (max-width: 700px) {
   body div.bannerContainer .featureNav ul li {
-    margin: 10px;
+    margin: 0;
   }
 }
 body div.bannerContainer .featureNav ul li a {
@@ -147,11 +131,8 @@ body div.bannerContainer .featureNav ul li a {
   color: black;
 }
 body div.bannerContainer .featureNav ul li a img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
   width: 20px;
+  margin-top: 50px;
 }
 body div.bannerContainer .featureNav ul li a p {
   font-size: 15px;
@@ -168,7 +149,6 @@ body div.bannerContainer .banner {
 @media (max-width: 700px) {
   body div.bannerContainer .banner {
     width: 100%;
-    padding-left: 0;
   }
 }
 body div.bannerContainer .banner h1 {
@@ -178,14 +158,6 @@ body div.bannerContainer .banner h1 {
   margin-top: 40px;
   margin-left: 50px;
   float: left;
-}
-@media (max-width: 700px) {
-  body div.bannerContainer .banner h1 {
-    margin-left: 10px;
-    display: inline-block;
-    text-align: center;
-    font-size: 80px;
-  }
 }
 body .movies {
   margin: 100px 40px 100px 150px;
@@ -227,66 +199,7 @@ body .movies ul li a img {
 body .movies ul li a p {
   font-size: 15px;
 }
-body .movieModal {
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-  width: 100vh;
-  height: 100vh;
-  background-color: #ff5757;
-  position: absolute;
-}
-body .movieModal .boxMovie {
-  max-width: 800px;
-  height: 1400px;
-  margin: 300px;
-  z-index: 0;
-  position: relative;
-}
-body .movieModal .boxMovie header a {
-  text-decoration: none;
-}
-body .movieModal .boxMovie header a i {
-  font-size: 30px;
-  color: #ff5757;
-  z-index: 2;
-  right: -720px;
-  top: 10px;
-}
-body .movieModal .boxMovie header .backImage {
-  max-width: 800px;
-  z-index: 1;
-  opacity: 0.4;
-}
-body .movieModal .boxMovie header .title {
-  font-size: 40px;
-  color: #ff5757;
-  z-index: 2;
-  top: 150px;
-  right: -660px;
-  float: right;
-  text-shadow: 2px 2px 2px black;
-}
-body .movieModal .boxMovie header .subtitle {
-  font-size: 15px;
-  z-index: 2;
-  top: 210px;
-  right: -580px;
-}
-body .movieModal .boxMovie div .frontImage {
-  width: 300px;
-  z-index: 2;
-  top: 50px;
-  left: 50px;
-}
-body .movieModal .boxMovie .boxInfo .summary {
-  width: 350px;
-  text-align: justify;
-  font-size: 15px;
-  z-index: 1;
-  top: 400px;
-  right: -700px;
-}
+
 .show {
   display: block;
 }
@@ -295,4 +208,4 @@ body .movieModal .boxMovie .boxInfo .summary {
   display: none;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=.css.map */
