@@ -35,6 +35,7 @@ const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
 }
 
 const allPopularMovies = () =>{
+    event.preventDefault()
     innerHTMLCleaner('popularMovies')
     showElement('popularSection')
     hideElement('topRatesSection')
@@ -48,6 +49,7 @@ const allPopularMovies = () =>{
 }
 
 const allTopRates = () =>{
+    event.preventDefault()
     innerHTMLCleaner('topRates')
     hideElement('popularSection')
     showElement('topRatesSection')
@@ -61,6 +63,7 @@ const allTopRates = () =>{
 }
 
 const allUpcoming = () =>{
+    event.preventDefault()
     innerHTMLCleaner('upcoming')
     hideElement('popularSection')
     hideElement('topRatesSection')
@@ -74,6 +77,7 @@ const allUpcoming = () =>{
 }
 
 const allNowPlaying = () =>{
+    event.preventDefault()
     innerHTMLCleaner('nowPlaying')
     hideElement('popularSection')
     hideElement('topRatesSection')
@@ -90,6 +94,7 @@ const clicksCounter = (buttonId, containerId, category) =>{
     let loadMore = document.getElementById(buttonId)
     let counter = 1
     loadMore.onclick = function(){
+        event.preventDefault()
         counter += 1
         fetchMoviePosters(containerId, category, twentyArray, counter)
     }
