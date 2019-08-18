@@ -184,7 +184,7 @@ body{
         }
     }    
     .movies{
-        margin: 100px 40px 100px 150px;
+        margin: 100px 40px 50px 150px;
         @media(max-width: $small-break){
             margin: 10px;
         }
@@ -214,10 +214,11 @@ body{
         }
         ul{
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             flex-wrap: wrap;
             margin: 20px 0;
             li{
+                margin-top: 20px;
                 a{
                     text-decoration: none;
                     color: grey;

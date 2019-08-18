@@ -188,7 +188,7 @@ body div.bannerContainer .banner h1 {
   }
 }
 body .movies {
-  margin: 100px 40px 100px 150px;
+  margin: 100px 40px 50px 150px;
 }
 @media (max-width: 700px) {
   body .movies {
@@ -221,9 +221,12 @@ body .movies p.results {
 }
 body .movies ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   margin: 20px 0;
+}
+body .movies ul li {
+  margin-top: 20px;
 }
 body .movies ul li a {
   text-decoration: none;
