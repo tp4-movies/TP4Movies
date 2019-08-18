@@ -208,6 +208,10 @@ body{
                 }
             }
         }
+        p.results{
+            float: right;
+            color: grey;
+        }
         ul{
             display: flex;
             justify-content: space-between;
@@ -226,6 +230,21 @@ body{
                         text-align: center;
                     }
                 }
+            }
+        }
+        a.load{
+            border: 1px solid $mainColor;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 0 auto;
+            max-width: 100px;
+            text-align: center;
+            color: $mainColor;
+            text-decoration: none;
+            transition: all 0.5s;
+            &:hover{
+                background-color: $mainColor;
+                color: white;
             }
         }
     }

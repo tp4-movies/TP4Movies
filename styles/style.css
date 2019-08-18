@@ -215,6 +215,10 @@ body .movies div a p {
   color: grey;
   margin-right: 10px;
 }
+body .movies p.results {
+  float: right;
+  color: grey;
+}
 body .movies ul {
   display: flex;
   justify-content: space-between;
@@ -232,6 +236,21 @@ body .movies ul li a figcaption {
   font-size: 15px;
   max-width: 200px;
   text-align: center;
+}
+body .movies a.load {
+  border: 1px solid #ff5757;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  max-width: 100px;
+  text-align: center;
+  color: #ff5757;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+body .movies a.load:hover {
+  background-color: #ff5757;
+  color: white;
 }
 body .movieModal {
   margin: 0;
