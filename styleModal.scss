@@ -1,0 +1,90 @@
+body{
+    .movieModal{
+        margin: 0;
+        padding: 0;
+        //font-family: $mainFont;
+        width: 100vw;
+        height: 100vh;
+        background-color: red;
+        position: absolute;
+        .boxMovie{
+            max-width: 800px; 
+            height: 1400px;
+            margin: 300px;
+            z-index: 1;
+            position: relative;
+            header{
+                a{
+                    text-decoration: none;
+                    i{
+                        font-size: 30px;
+                        color: black;
+                        //position:absolute;
+                        z-index: 2;
+                        right: -720px;
+                        top: 10px;
+                    }
+                }
+                .backImage{
+                    max-width: 800px;
+                    //position:absolute;
+                    z-index: 1;
+                    opacity: 0.4;
+                }
+                .title{
+                    font-size: 40px;
+                    color: black;
+                    //position:absolute;
+                    z-index: 2;
+                    top: 150px;
+                    right: -660px;
+                    float: right;
+                    text-shadow: 2px 2px 2px black;
+                }
+                .subtitle{
+                    font-size: 15px;
+                    //position:absolute;
+                    z-index: 2;
+                    top: 210px;
+                    right: -580px;
+                }
+            }
+            .boxInfo{
+                div{
+                    .frontImage{
+                        width: 300px;
+                        //position:absolute;
+                        z-index: 2;
+                        top: 50px;
+                        left: 50px;
+                    }
+                }
+                //position: absolute;
+                div{
+                    .summary{
+                        width: 350px;
+                        text-align: justify;
+                        font-size: 15px;
+                        //position: absolute;
+                        z-index: 1;
+                        top: 400px;
+                        right: -700px;
+                        
+                    }
+                    div{
+                        .subInfo{
+                            h5{
+
+                            }
+                            p{
+
+                            }
+                        }
+                    }
+                        
+                }
+            }
+                
+        }
+    }
+}

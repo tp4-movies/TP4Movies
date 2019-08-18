@@ -29,7 +29,7 @@ body {
   color: black;
   font-family: "Roboto", sans-serif;
 }
-body header {
+body .mainHeader {
   z-index: 99999;
   background-color: white;
   display: grid;
@@ -39,33 +39,33 @@ body header {
   position: fixed;
   outline: none;
 }
-body header a {
+body .mainHeader a {
   background-color: #ff5757;
   width: 100px;
   border: 1px solid #ff5757;
   display: block;
 }
-body header a img {
+body .mainHeader a img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 80px;
 }
-body header .find {
+body .mainHeader .find {
   font-size: 20px;
   display: flex;
   align-items: center;
   float: right;
 }
-body header .find img {
+body .mainHeader .find img {
   width: 20px;
   margin: 0 30px;
 }
-body header .find input {
+body .mainHeader .find input {
   font-size: 20px;
   border: none;
 }
-body header div.dropdownIcon {
+body .mainHeader div.dropdownIcon {
   display: none;
   height: 100px;
   font-size: 50px;
@@ -73,17 +73,17 @@ body header div.dropdownIcon {
   position: absolute;
   right: 0;
 }
-body header div.dropdownIcon a {
+body .mainHeader div.dropdownIcon a {
   height: 100%;
   text-align: center;
   text-justify: center;
   border: none;
 }
-body header div.dropdownIcon i {
+body .mainHeader div.dropdownIcon i {
   line-height: 100px;
 }
 @media (max-width: 700px) {
-  body header div.dropdownIcon {
+  body .mainHeader div.dropdownIcon {
     display: block;
   }
 }
@@ -231,34 +231,43 @@ body .movieModal {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  width: 100vh;
+  width: 100vw;
   height: 100vh;
   background-color: #ff5757;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 body .movieModal .boxMovie {
-  max-width: 800px;
+  max-width: 750px;
   height: 1400px;
   margin: 300px;
-  z-index: 0;
+  z-index: 1;
   position: relative;
 }
-body .movieModal .boxMovie header a {
+body .movieModal .boxMovie .modalHeader {
+  max-width: 750px;
+}
+body .movieModal .boxMovie .modalHeader a {
   text-decoration: none;
 }
-body .movieModal .boxMovie header a i {
+body .movieModal .boxMovie .modalHeader a i {
   font-size: 30px;
   color: #ff5757;
+  position: absolute;
   z-index: 2;
   right: -720px;
   top: 10px;
 }
-body .movieModal .boxMovie header .backImage {
-  max-width: 800px;
+body .movieModal .boxMovie .modalHeader .backImage {
+  max-width: 750px;
+  position: absolute;
   z-index: 1;
   opacity: 0.4;
 }
-body .movieModal .boxMovie header .title {
+body .movieModal .boxMovie .modalHeader .title {
   font-size: 40px;
   color: #ff5757;
   z-index: 2;
@@ -267,19 +276,23 @@ body .movieModal .boxMovie header .title {
   float: right;
   text-shadow: 2px 2px 2px black;
 }
-body .movieModal .boxMovie header .subtitle {
+body .movieModal .boxMovie .modalHeader .subtitle {
   font-size: 15px;
   z-index: 2;
   top: 210px;
   right: -580px;
 }
-body .movieModal .boxMovie div .frontImage {
+body .movieModal .boxMovie .boxInfo {
+  position: absolute;
+}
+body .movieModal .boxMovie .boxInfo div .frontImage {
   width: 300px;
-  z-index: 2;
+  position: absolute;
+  z-index: 5;
   top: 50px;
   left: 50px;
 }
-body .movieModal .boxMovie .boxInfo .summary {
+body .movieModal .boxMovie .boxInfo div .summary {
   width: 350px;
   text-align: justify;
   font-size: 15px;
