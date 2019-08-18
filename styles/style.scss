@@ -184,7 +184,10 @@ body{
         }
     }    
     .movies{
-        margin: 100px 40px 100px 150px;
+        margin: 100px 40px 50px 150px;
+        @media(max-width: $small-break){
+            margin: 10px;
+        }
         div{
             margin: 10px;
             overflow: hidden;
@@ -205,23 +208,44 @@ body{
                 }
             }
         }
+        p.results{
+            float: right;
+            color: grey;
+        }
         ul{
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             flex-wrap: wrap;
             margin: 20px 0;
-            padding-left: 10px;
             li{
+                margin-top: 20px;
                 a{
                     text-decoration: none;
                     color: grey;
                     img{
                         max-width: 200px;
                     }
-                    p{
+                    figcaption{
                         font-size: 15px;
+                        max-width: 200px;
+                        text-align: center;
                     }
                 }
+            }
+        }
+        a.load{
+            border: 1px solid $mainColor;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 0 auto;
+            max-width: 100px;
+            text-align: center;
+            color: $mainColor;
+            text-decoration: none;
+            transition: all 0.5s;
+            &:hover{
+                background-color: $mainColor;
+                color: white;
             }
         }
     }
