@@ -15,15 +15,15 @@
 <body onload="initialize()">
     <header>
         <a href=""><img src="image/pochoclo.png" alt=""></a> 
-        <div class="find">
-            <img src="image/search.png" alt="">
-            <input type="text" placeholder="Search for a movie..."></input>
-        </div>
+        <form class="find">
+            <a href="#" onclick="searchMovie()"><img src="image/search.png" alt=""></a>
+            <input placeholder="Search for a movie..." id="searchInput">
+        </form>
         <div class="dropdownIcon">
             <a href="#" onclick="dropdownMenu()"><i class="fas fa-bars"></i></a>
         </div>
     </header>
-    <div class="bannerContainer">
+    <div class="bannerContainer show">
         <nav class="featureNav" id="featureNav">
             <ul>
                 <li>
@@ -53,7 +53,7 @@
                 </li>
             </ul>
         </nav>
-        <div class="banner">
+        <div class="banner show" id="banner">
             <h1>MOVIE TIME</h1>
         </div>
     </div>
