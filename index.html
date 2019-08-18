@@ -12,7 +12,7 @@
     <title>Movie Page</title>
     <script src="main.js" type="text/javascript"></script>
 </head>
-<body>
+<body onload="initialize()">
     <header>
         <a href=""><img src="image/pochoclo.png" alt=""></a> 
         <div class="find">
@@ -57,6 +57,7 @@
             <h1>MOVIE TIME</h1>
         </div>
     </div>
+    <!--POPULAR MOVIES-->
     <section class="movies popular">
         <div>
             <h3>POPULAR MOVIES</h3>
@@ -64,39 +65,16 @@
                 <p>View all  <i class="fas fa-arrow-right"></i></p>
             </a> 
         </div>
-        <ul class="movies">
-            <li>
+        <ul class="movies" id="popularMovies">
+            <!--<li>
                 <a href="">
                     <img src="image/LionKing.jpg" alt="">
                     <p>The Lion King</p>
                 </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/avengers.jpg" alt="">
-                    <p>Avengers Endgame</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/detective.jpg" alt="">
-                    <p>Detective Conan</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/spiderman.jpg" alt="">
-                    <p>Spiderman far from Home</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/chasing.jpg" alt="">
-                    <p>Chasing Dragon</p>
-                </a>
-            </li>
+            </li>-->
         </ul>
     </section>
+    <!--TOP RATES-->
     <section class="movies topRates">
         <div>
             <h3>TOP RATES</h3>
@@ -104,39 +82,10 @@
                 <p>View all  <i class="fas fa-arrow-right"></i></p>
             </a>
         </div>
-        <ul class="movies">
-            <li>
-                <a href="">
-                    <img src="image/LionKing.jpg" alt="">
-                    <p>The Lion King</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/avengers.jpg" alt="">
-                    <p>Avengers Endgame</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/detective.jpg" alt="">
-                    <p>Detective Conan</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/spiderman.jpg" alt="">
-                    <p>Spiderman far from Home</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/chasing.jpg" alt="">
-                    <p>Chasing Dragon</p>
-                </a>
-            </li>
+        <ul class="movies" id="topRates">
         </ul>
     </section>
+    <!--UPCOMING-->
     <section class="movies upcoming">
         <div>
             <h3>UPCOMING</h3>
@@ -144,39 +93,10 @@
                 <p>View all  <i class="fas fa-arrow-right"></i></p>
             </a>
         </div>
-        <ul class="">
-            <li>
-                <a href="">
-                    <img src="image/LionKing.jpg" alt="">
-                    <p>The Lion King</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/avengers.jpg" alt="">
-                    <p>Avengers Endgame</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/detective.jpg" alt="">
-                    <p>Detective Conan</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/spiderman.jpg" alt="">
-                    <p>Spiderman far from Home</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/chasing.jpg" alt="">
-                    <p>Chasing Dragon</p>
-                </a>
-            </li>
+        <ul class="movies upcoming" id="upcoming">
         </ul>
     </section>
+    <!--NOW PLAYING-->
     <section class="movies nowPlaying">
         <div>
             <h3>NOW PLAYING</h3>
@@ -184,37 +104,7 @@
                 <p>View all  <i class="fas fa-arrow-right"></i></p>
             </a>
         </div>
-        <ul class="movies">
-            <li>
-                <a href="">
-                    <img src="image/LionKing.jpg" alt="">
-                    <p>The Lion King</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/avengers.jpg" alt="">
-                    <p>Avengers Endgame</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/detective.jpg" alt="">
-                    <p>Detective Conan</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/spiderman.jpg" alt="">
-                    <p>Spiderman far from Home</p>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="image/chasing.jpg" alt="">
-                    <p>Chasing Dragon</p>
-                </a>
-            </li>
+        <ul class="movies" id="nowPlaying">
         </ul>
     </section>
     
