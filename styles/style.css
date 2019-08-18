@@ -190,6 +190,11 @@ body div.bannerContainer .banner h1 {
 body .movies {
   margin: 100px 40px 100px 150px;
 }
+@media (max-width: 700px) {
+  body .movies {
+    margin: 10px;
+  }
+}
 body .movies div {
   margin: 10px;
   overflow: hidden;
@@ -215,7 +220,6 @@ body .movies ul {
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 20px 0;
-  padding-left: 10px;
 }
 body .movies ul li a {
   text-decoration: none;
@@ -224,8 +228,10 @@ body .movies ul li a {
 body .movies ul li a img {
   max-width: 200px;
 }
-body .movies ul li a p {
+body .movies ul li a figcaption {
   font-size: 15px;
+  max-width: 200px;
+  text-align: center;
 }
 body .movieModal {
   margin: 0;

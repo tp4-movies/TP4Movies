@@ -185,6 +185,9 @@ body{
     }    
     .movies{
         margin: 100px 40px 100px 150px;
+        @media(max-width: $small-break){
+            margin: 10px;
+        }
         div{
             margin: 10px;
             overflow: hidden;
@@ -210,7 +213,6 @@ body{
             justify-content: space-between;
             flex-wrap: wrap;
             margin: 20px 0;
-            padding-left: 10px;
             li{
                 a{
                     text-decoration: none;
@@ -218,8 +220,10 @@ body{
                     img{
                         max-width: 200px;
                     }
-                    p{
+                    figcaption{
                         font-size: 15px;
+                        max-width: 200px;
+                        text-align: center;
                     }
                 }
             }
