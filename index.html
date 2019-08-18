@@ -58,58 +58,60 @@
         </div>
     </div>
     <!--POPULAR MOVIES-->
-    <section class="movies popular">
+    <section class="movies popularSection show" id="popularSection">
         <div>
             <h3>POPULAR MOVIES</h3>
-            <a href="">
+            <a href="#" class="show" id="popularViewAll" onclick="allPopularMovies()">
                 <p>View all  <i class="fas fa-arrow-right"></i></p>
             </a> 
+            <p class="results hide" id="popularResults">RESULTS</p>
         </div>
         <ul class="movies" id="popularMovies">
-            <!--<li>
-                <a href="">
-                    <img src="image/LionKing.jpg" alt="">
-                    <p>The Lion King</p>
-                </a>
-            </li>-->
         </ul>
+        <a href="#" class="load hide" id="popularLoad"">LOAD MORE</a>
     </section>
     <!--TOP RATES-->
-    <section class="movies topRates">
+    <section class="movies topRates show" id="topRatesSection">
         <div>
             <h3>TOP RATES</h3>
-            <a href="">
+            <a href="#" class="show" id="topRatesViewAll" onclick="allTopRates()">
                 <p>View all  <i class="fas fa-arrow-right"></i></p>
             </a>
+            <p class="results hide" id="topRatesResults">RESULTS</p>
         </div>
         <ul class="movies" id="topRates">
         </ul>
+        <a href="#" class="load hide" id="topRatesLoad">LOAD MORE</a>
     </section>
     <!--UPCOMING-->
-    <section class="movies upcoming">
+    <section class="movies upcoming show" id="upcomingSection">
         <div>
             <h3>UPCOMING</h3>
-            <a href="">
+            <a href="#" class="show" id="upcomingViewAll" onclick="allUpcoming()">
                 <p>View all  <i class="fas fa-arrow-right"></i></p>
             </a>
+            <p class="results hide" id="upcomingResults">RESULTS</p>
         </div>
         <ul class="movies upcoming" id="upcoming">
         </ul>
+        <a href="#" class="load hide" id="upcomingLoad">LOAD MORE</a>
     </section>
     <!--NOW PLAYING-->
-    <section class="movies nowPlaying">
+    <section class="movies nowPlaying show" id="nowPlayingSection">
         <div>
             <h3>NOW PLAYING</h3>
-            <a href="">
+            <a href="#" class="show" id="nowPlayingViewAll" onclick="allNowPlaying()">
                 <p>View all  <i class="fas fa-arrow-right"></i></p>
             </a>
+            <p class="results hide" id="nowPlayingResults">RESULTS</p>
         </div>
         <ul class="movies" id="nowPlaying">
         </ul>
+        <a href="#" class="load hide" id="nowPlayingLoad">LOAD MORE</a>
     </section>
     
     <!-- MODAL -->
-    <div class="movieModal">
+    <div class="movieModal hide">
         <div class="boxMovie">
             <header>
                 <a href="#" onclick="closeMovie()" class="closeMovie"><i class="fas fa-times"></i></a>

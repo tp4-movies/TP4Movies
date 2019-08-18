@@ -1,18 +1,21 @@
 const apiKey = 'e007dc23f3b14243908e46acf9ee53a1'
+const fourArray = [0, 1, 2, 3]
+const twentyArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
 
 const initialize = () =>{
-    homeFetch('popularMovies', 'popular')
-    homeFetch('topRates', 'top_rated')
-    homeFetch('upcoming', 'upcoming')
-    homeFetch('nowPlaying', 'now_playing')
+    fetchMoviePosters('popularMovies', 'popular', fourArray, 1)
+    fetchMoviePosters('topRates', 'top_rated', fourArray, 1)
+    fetchMoviePosters('upcoming', 'upcoming', fourArray, 1)
+    fetchMoviePosters('nowPlaying', 'now_playing', fourArray, 1)
 }
 
-const homeFetch = (containerId, category) =>{
+const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
     let container = document.getElementById(containerId)
-    fetch(`https://api.themoviedb.org/3/movie/${category}?api_key=${apiKey}`)
+    fetch(`https://api.themoviedb.org/3/movie/${category}?api_key=${apiKey}&page=${page}`)
         .then(res=>res.json())
         .then(res=>{
-            [0, 1, 2, 3].forEach(num=>{
+            numbersArray.forEach(num=>{
                 let li = document.createElement('li')
                 let anchor = document.createElement('a')
                 let figure = document.createElement('figure')
@@ -31,10 +34,66 @@ const homeFetch = (containerId, category) =>{
         .catch(error=>console.log(error))  
 }
 
+const allPopularMovies = () =>{
+    innerHTMLCleaner('popularMovies')
+    showElement('popularSection')
+    hideElement('topRatesSection')
+    hideElement('upcomingSection')
+    hideElement('nowPlayingSection')
+    fetchMoviePosters('popularMovies', 'popular', twentyArray)
+    hideElement('popularViewAll')
+    showElement('popularResults')
+    showElement('popularLoad')
+    clicksCounter('popularLoad', 'popularMovies', 'popular')
+}
 
+const allTopRates = () =>{
+    innerHTMLCleaner('topRates')
+    hideElement('popularSection')
+    showElement('topRatesSection')
+    hideElement('upcomingSection')
+    hideElement('nowPlayingSection')
+    fetchMoviePosters('topRates', 'top_rated', twentyArray)
+    hideElement('topRatesViewAll')
+    showElement('topRatesResults')
+    showElement('topRatesLoad')
+    clicksCounter('topRatesLoad', 'topRates', 'top_rated')
+}
 
+const allUpcoming = () =>{
+    innerHTMLCleaner('upcoming')
+    hideElement('popularSection')
+    hideElement('topRatesSection')
+    showElement('upcomingSection')
+    hideElement('nowPlayingSection')
+    fetchMoviePosters('upcoming', 'upcoming', twentyArray)
+    hideElement('upcomingViewAll')
+    showElement('upcomingResults')
+    showElement('upcomingLoad')
+    clicksCounter('upcomingLoad', 'upcoming', 'upcoming')
+}
 
+const allNowPlaying = () =>{
+    innerHTMLCleaner('nowPlaying')
+    hideElement('popularSection')
+    hideElement('topRatesSection')
+    hideElement('upcomingSection')
+    showElement('nowPlayingSection')
+    fetchMoviePosters('nowPlaying', 'now_playing', twentyArray)
+    hideElement('nowPlayingViewAll')
+    showElement('nowPlayingResults')
+    showElement('nowPlayingLoad')
+    clicksCounter('nowPlayingLoad', 'nowPlaying', 'now_playing')
+}
 
+const clicksCounter = (buttonId, containerId, category) =>{
+    let loadMore = document.getElementById(buttonId)
+    let counter = 1
+    loadMore.onclick = function(){
+        counter += 1
+        fetchMoviePosters(containerId, category, twentyArray, counter)
+    }
+}
 
 const dropdownMenu = () =>{
     toggleMenu()
@@ -43,4 +102,19 @@ const dropdownMenu = () =>{
 const toggleMenu = () =>{
     let menu = document.getElementById('featureNav')
     menu.classList.toggle('hide')
+}
+
+const showElement = (elementId) =>{
+    let element = document.getElementById(elementId)
+    element.classList.replace('hide', 'show')
+}
+
+const hideElement = (elementId) =>{
+    let element = document.getElementById(elementId)
+    element.classList.replace('show', 'hide')
+}
+
+const innerHTMLCleaner = (containerId) =>{
+    let container = document.getElementById(containerId)
+    container.innerHTML = ''
 }
