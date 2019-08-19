@@ -15,15 +15,15 @@
 <body onload="initialize()">
     <header>
         <a href=""><img src="image/pochoclo.png" alt=""></a> 
-        <div class="find">
-            <img src="image/search.png" alt="">
-            <input type="text" placeholder="Search for a movie..."></input>
-        </div>
+        <form class="find">
+            <a href="#" onclick="searchMovie()"><img src="image/search.png" alt=""></a>
+            <input placeholder="Search for a movie..." id="searchInput">
+        </form>
         <div class="dropdownIcon">
             <a href="#" onclick="dropdownMenu()"><i class="fas fa-bars"></i></a>
         </div>
     </header>
-    <div class="bannerContainer">
+    <div class="bannerContainer show">
         <nav class="featureNav" id="featureNav">
             <ul>
                 <li>
@@ -53,10 +53,34 @@
                 </li>
             </ul>
         </nav>
-        <div class="banner">
+        <div class="banner show" id="banner">
             <h1>MOVIE TIME</h1>
         </div>
     </div>
+    <a href="#" class="temporaryAnchor" onclick="showMovieInfo()">Show modal</a>
+    <!-- MODAL -->
+    <section class="movieModal hide" id="movieModal">
+        <div class="movieBox">
+            <div class="backdrop">
+                <a href="#" class="closeMovie" onclick="closeMovie()"><i class="fas fa-times"></i></a>
+                <div class="opacity"></div>
+                <div class="backdropContent">
+                    <h3 id="title">The Lion King</h3>
+                    <h4 id="subtitle">The King has Returned.</h4>  
+                </div>
+                <img src="image/LionKing.jpg" class="frontImage" alt="">
+            </div>
+            <div class="boxInfo" id="boxInfo">
+                <div class="boxInfoContent">
+                    <p id="summary">Simba idolises his father, King Mufasa, and takes to heart his own royal destiny. But not everyone in the kingdom celebrates the new cub's arrival. Scar, Mufasa's brother—and former heir to the throne—has plans of his own. The battle for Pride Rock is ravaged with betrayal, tragedy and drama, ultimately resulting in Simba's exile. With help from a curious pair of newfound friends, Simba will have to figure out how to grow up and take back what is rightfully his.</p>
+                    <h5>GENRES</h5>
+                    <span id="genre">Adventure, Animation, Family, Drama, Action</span>
+                    <h5>RELEASE DATE</h5>
+                    <span id="releaseDate">12 July 2019</span>
+                </div>
+            </div>
+        </div>
+    </section>
     <!--POPULAR MOVIES-->
     <section class="movies popularSection show" id="popularSection">
         <div>
@@ -109,9 +133,14 @@
         </ul>
         <a href="#" class="load hide" id="nowPlayingLoad">LOAD MORE</a>
     </section>
+    <!--SEARCH-->
+    <section class="movies search hide" id="searchSection">
+        <ul class="movies" id="search"></ul>
+        <a href="#" class="load hide" id="searchLoad">LOAD MORE</a>
+    </section>
     
     <!-- MODAL -->
-    <div class="movieModal hide">
+    <!--<div class="movieModal hide">
         <div class="boxMovie">
             <header>
                 <a href="#" onclick="closeMovie()" class="closeMovie"><i class="fas fa-times"></i></a>
@@ -138,7 +167,7 @@
 
             
         </div>
-    </div>
+    </div>-->
 
 </body>
 </html>

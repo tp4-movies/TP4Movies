@@ -28,9 +28,10 @@ input:focus {
 body {
   color: black;
   font-family: "Roboto", sans-serif;
+  position: relative;
 }
 body header {
-  z-index: 99999;
+  z-index: 1;
   background-color: white;
   display: grid;
   grid-template-columns: 100px auto 100px;
@@ -101,7 +102,7 @@ body div.bannerContainer .featureNav {
   float: left;
   width: 100px;
   height: 600px;
-  z-index: 999;
+  z-index: 1;
   position: fixed;
 }
 @media (max-width: 700px) {
@@ -256,71 +257,92 @@ body .movies a.load:hover {
   color: white;
 }
 body .movieModal {
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-  width: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 2;
   height: 100vh;
-  background-color: #ff5757;
-  position: absolute;
+  overflow: scroll;
 }
-body .movieModal .boxMovie {
-  max-width: 800px;
-  height: 1400px;
-  margin: 300px;
-  z-index: 0;
+body .movieModal .movieBox {
+  width: 80%;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+body .movieModal .movieBox div.backdrop {
+  grid-column: 1/span 2;
+  background-image: url("../image/lionKingBack.jpeg");
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+  height: 50vh;
   position: relative;
+  font-size: 20px;
 }
-body .movieModal .boxMovie header a {
-  text-decoration: none;
+body .movieModal .movieBox div.backdrop .opacity {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
 }
-body .movieModal .boxMovie header a i {
-  font-size: 30px;
+body .movieModal .movieBox div.backdrop a.closeMovie {
+  color: white;
+  position: absolute;
+  z-index: 3;
+  right: 20px;
+  top: 20px;
+}
+body .movieModal .movieBox div.backdrop a.closeMovie:hover {
   color: #ff5757;
-  z-index: 2;
-  right: -720px;
-  top: 10px;
 }
-body .movieModal .boxMovie header .backImage {
-  max-width: 800px;
-  z-index: 1;
-  opacity: 0.4;
+body .movieModal .movieBox div.backdrop .backdropContent {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 20px);
+  transform: translateY(-50%);
 }
-body .movieModal .boxMovie header .title {
+body .movieModal .movieBox div.backdrop .backdropContent h3 {
+  color: #ff5757;
   font-size: 40px;
+  margin-bottom: 10px;
+}
+body .movieModal .movieBox div.backdrop .backdropContent h4 {
   color: #ff5757;
-  z-index: 2;
-  top: 150px;
-  right: -660px;
-  float: right;
-  text-shadow: 2px 2px 2px black;
+  font-size: 25px;
 }
-body .movieModal .boxMovie header .subtitle {
-  font-size: 15px;
-  z-index: 2;
-  top: 210px;
-  right: -580px;
+body .movieModal .movieBox div.boxInfo {
+  background-color: white;
+  padding: 20px;
+  grid-column: 1/span 2;
 }
-body .movieModal .boxMovie div .frontImage {
-  width: 300px;
-  z-index: 2;
-  top: 50px;
-  left: 50px;
+body .movieModal .movieBox div.boxInfo .boxInfoContent {
+  margin: 20px 20px 20px calc(50% + 20px);
 }
-body .movieModal .boxMovie .boxInfo .summary {
-  width: 350px;
+body .movieModal .movieBox div.boxInfo .boxInfoContent p {
   text-align: justify;
-  font-size: 15px;
-  z-index: 1;
-  top: 400px;
-  right: -700px;
+  text-justify: inter-word;
 }
+body .movieModal .movieBox div.boxInfo .boxInfoContent h5 {
+  color: #ff5757;
+  margin-top: 20px;
+}
+body .movieModal .movieBox .frontImage {
+  position: absolute;
+  max-width: 40%;
+  left: 40px;
+  top: 40px;
+}
+
 .show {
   display: block;
 }
 
 .hide {
   display: none;
+}
+
+.temporaryAnchor {
+  margin-left: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */
