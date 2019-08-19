@@ -106,8 +106,14 @@ const searchMovie = () =>{
     let searchInput = input.value
     input.value = ''
     if(searchInput !== ''){
-        let container = document.getElementById('search')
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchInput}&page=${1}`)
+        searchFetch('search', `?api_key=${apiKey}&query=${searchInput}&page=1`)
+        searchClicksCounter('searchLoad', 'search', searchInput)
+    }
+}
+
+const searchFetch = (containerId, apiString) =>{
+    let container = document.getElementById(containerId)
+    fetch(`https://api.themoviedb.org/3/search/movie${apiString}`)
             .then(res=>res.json())
             .then(res=>{
                 twentyArray.forEach(num=>{
@@ -126,7 +132,16 @@ const searchMovie = () =>{
                 })
                 
             })
-            .catch(error=>console.log(error))  
+    .catch(error=>console.log(error))  
+}
+
+const searchClicksCounter = (buttonId, containerId, searchInput) =>{
+    let loadMore = document.getElementById(buttonId)
+    let counter = 1
+    loadMore.onclick = function(){
+        event.preventDefault()
+        counter += 1
+        searchFetch(containerId, `?api_key=${apiKey}&query=${searchInput}&page=${counter}`)
     }
 }
 
