@@ -111,6 +111,14 @@ const searchMovie = () =>{
     }
 }
 
+const closeMovie = () =>{
+    hideElement('movieModal')
+}
+
+const showMovieInfo = () =>{
+    showElement('movieModal')
+}
+
 const searchFetch = (containerId, apiString) =>{
     let container = document.getElementById(containerId)
     fetch(`https://api.themoviedb.org/3/search/movie${apiString}`)

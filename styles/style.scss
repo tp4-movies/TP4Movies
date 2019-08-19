@@ -268,13 +268,38 @@ body{
                 background-repeat: no-repeat, repeat;
                 background-position: center;
                 background-size: cover;
-                height: 40vh;
+                height: 50vh;
                 position: relative;
+                font-size: 20px;
+                .opacity{
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.8);
+                }
+                a.closeMovie{
+                    color: white;
+                    position: absolute;
+                    z-index: 3;
+                    right: 20px;
+                    top: 20px;
+                    &:hover{
+                        color: $mainColor;
+                    }
+                }
                 .backdropContent{
                     position: absolute;
                     top: 50%;
                     left: calc(50% + 20px);
                     transform: translateY(-50%);
+                    h3{
+                        color: $mainColor;
+                        font-size: 40px;
+                        margin-bottom: 10px;
+                    }
+                    h4{
+                        color: $mainColor;
+                        font-size: 25px;
+                    }
                 }
             }
             div.boxInfo{
@@ -283,6 +308,14 @@ body{
                 grid-column: 1 / span 2;
                 .boxInfoContent{
                     margin: 20px 20px 20px calc(50% + 20px);
+                    p{
+                        text-align: justify;
+                        text-justify: inter-word;
+                    }
+                    h5{
+                    color: $mainColor;
+                    margin-top: 20px;
+                    }
                 }
             }
             .frontImage{
@@ -300,6 +333,9 @@ body{
 }
 .hide{
     display: none;
+}
+.temporaryAnchor{
+    margin-left: 100px;
 }
 
 

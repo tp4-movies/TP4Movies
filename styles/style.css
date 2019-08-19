@@ -276,14 +276,39 @@ body .movieModal .movieBox div.backdrop {
   background-repeat: no-repeat, repeat;
   background-position: center;
   background-size: cover;
-  height: 40vh;
+  height: 50vh;
   position: relative;
+  font-size: 20px;
+}
+body .movieModal .movieBox div.backdrop .opacity {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+body .movieModal .movieBox div.backdrop a.closeMovie {
+  color: white;
+  position: absolute;
+  z-index: 3;
+  right: 20px;
+  top: 20px;
+}
+body .movieModal .movieBox div.backdrop a.closeMovie:hover {
+  color: #ff5757;
 }
 body .movieModal .movieBox div.backdrop .backdropContent {
   position: absolute;
   top: 50%;
   left: calc(50% + 20px);
   transform: translateY(-50%);
+}
+body .movieModal .movieBox div.backdrop .backdropContent h3 {
+  color: #ff5757;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+body .movieModal .movieBox div.backdrop .backdropContent h4 {
+  color: #ff5757;
+  font-size: 25px;
 }
 body .movieModal .movieBox div.boxInfo {
   background-color: white;
@@ -292,6 +317,14 @@ body .movieModal .movieBox div.boxInfo {
 }
 body .movieModal .movieBox div.boxInfo .boxInfoContent {
   margin: 20px 20px 20px calc(50% + 20px);
+}
+body .movieModal .movieBox div.boxInfo .boxInfoContent p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+body .movieModal .movieBox div.boxInfo .boxInfoContent h5 {
+  color: #ff5757;
+  margin-top: 20px;
 }
 body .movieModal .movieBox .frontImage {
   position: absolute;
@@ -306,6 +339,10 @@ body .movieModal .movieBox .frontImage {
 
 .hide {
   display: none;
+}
+
+.temporaryAnchor {
+  margin-left: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */

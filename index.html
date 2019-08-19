@@ -57,25 +57,26 @@
             <h1>MOVIE TIME</h1>
         </div>
     </div>
+    <a href="#" class="temporaryAnchor" onclick="showMovieInfo()">Show modal</a>
     <!-- MODAL -->
-    <section class="movieModal">
+    <section class="movieModal hide" id="movieModal">
         <div class="movieBox">
             <div class="backdrop">
+                <a href="#" class="closeMovie" onclick="closeMovie()"><i class="fas fa-times"></i></a>
+                <div class="opacity"></div>
                 <div class="backdropContent">
-                    <h3 class="title" id="title" >The Lion King</h3>
-                    <h4 class="subtitle" id="subtitle">The King has Returned.</h4>  
+                    <h3 id="title">The Lion King</h3>
+                    <h4 id="subtitle">The King has Returned.</h4>  
                 </div>
                 <img src="image/LionKing.jpg" class="frontImage" alt="">
             </div>
             <div class="boxInfo" id="boxInfo">
                 <div class="boxInfoContent">
-                    <p class="summary" id="summary">Simba idolises his father, King Mufasa, and takes to heart his own royal destiny. But not everyone in the kingdom celebrates the new cub's arrival. Scar, Mufasa's brother—and former heir to the throne—has plans of his own. The battle for Pride Rock is ravaged with betrayal, tragedy and drama, ultimately resulting in Simba's exile. With help from a curious pair of newfound friends, Simba will have to figure out how to grow up and take back what is rightfully his.</p>
-                    <div class="subInfo" id="subInfo">
-                        <h5 class="genre" id="genre">GENRES</h5>
-                        <p id="description">Adventure, Animation, Family, Drama, Action</p>
-                        <h5 id="genre">RELEASE DATE</h5>
-                        <p id="description">12 July 2019</p>
-                    </div>  
+                    <p id="summary">Simba idolises his father, King Mufasa, and takes to heart his own royal destiny. But not everyone in the kingdom celebrates the new cub's arrival. Scar, Mufasa's brother—and former heir to the throne—has plans of his own. The battle for Pride Rock is ravaged with betrayal, tragedy and drama, ultimately resulting in Simba's exile. With help from a curious pair of newfound friends, Simba will have to figure out how to grow up and take back what is rightfully his.</p>
+                    <h5>GENRES</h5>
+                    <span id="genre">Adventure, Animation, Family, Drama, Action</span>
+                    <h5>RELEASE DATE</h5>
+                    <span id="releaseDate">12 July 2019</span>
                 </div>
             </div>
         </div>
