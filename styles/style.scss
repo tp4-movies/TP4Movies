@@ -38,8 +38,9 @@ input{
 body{
     color: black;
     font-family: $mainFont;
+    position: relative;
     header{
-        z-index: 99999;
+        z-index: 1;
         background-color: white;
         display: grid;
         grid-template-columns: 100px auto 100px;
@@ -106,7 +107,7 @@ body{
             float: left;
             width: 100px;
             height: 600px;
-            z-index: 999;
+            z-index: 1;
             position: fixed;
             @media(max-width: $small-break){
                 margin-top: 100px;
@@ -250,87 +251,48 @@ body{
         }
     }
     .movieModal{
-        margin: 0;
-        padding: 0;
-        font-family: $mainFont;
-        width: 100vh;
+        background: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0;
+        z-index: 2;
         height: 100vh;
-        background-color: $mainColor;
-        position: absolute;
-        .boxMovie{
-            max-width: 800px; 
-            height: 1400px;
-            margin: 300px;
-            z-index: 0;
-            position: relative;
-            header{
-                a{
-                    text-decoration: none;
-                    i{
-                        font-size: 30px;
-                        color: $mainColor;
-                        //position:absolute;
-                        z-index: 2;
-                        right: -720px;
-                        top: 10px;
-                    }
-                }
-                .backImage{
-                    max-width: 800px;
-                    //position:absolute;
-                    z-index: 1;
-                    opacity: 0.4;
-                }
-                .title{
-                    font-size: 40px;
-                    color: $mainColor;
-                    //position:absolute;
-                    z-index: 2;
-                    top: 150px;
-                    right: -660px;
-                    float: right;
-                    text-shadow: 2px 2px 2px black;
-                }
-                .subtitle{
-                    font-size: 15px;
-                    //position:absolute;
-                    z-index: 2;
-                    top: 210px;
-                    right: -580px;
+        overflow: scroll;
+        .movieBox{
+            width: 80%;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            div.backdrop{
+                grid-column: 1 / span 2;
+                background-image: url("../image/lionKingBack.jpeg");
+                background-repeat: no-repeat, repeat;
+                background-position: center;
+                background-size: cover;
+                height: 40vh;
+                position: relative;
+                .backdropContent{
+                    position: absolute;
+                    top: 50%;
+                    left: calc(50% + 20px);
+                    transform: translateY(-50%);
                 }
             }
-            div{
-                .frontImage{
-                    width: 300px;
-                    //position:absolute;
-                    z-index: 2;
-                    top: 50px;
-                    left: 50px;
+            div.boxInfo{
+                background-color: white;
+                padding: 20px;
+                grid-column: 1 / span 2;
+                .boxInfoContent{
+                    margin: 20px 20px 20px calc(50% + 20px);
                 }
             }
-            .boxInfo{
-                //position: absolute;
-                .summary{
-                    width: 350px;
-                    text-align: justify;
-                    font-size: 15px;
-                    //position: absolute;
-                    z-index: 1;
-                    top: 400px;
-                    right: -700px;
-                    
-                }
-                .subInfo{
-                    h5{
-
-                    }
-                    p{
-
-                    }
-                }
+            .frontImage{
+                position: absolute;
+                max-width: 40%;
+                left: 40px;
+                top: 40px;
             }
-                
         }
+        
     }
 }
 .show{
