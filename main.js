@@ -186,3 +186,11 @@ const innerHTMLCleaner = (containerId) =>{
     let container = document.getElementById(containerId)
     container.innerHTML = ''
 }
+
+const fillModal = () =>{
+fetch(`https://api.themoviedb.org/3/movie/${peliculaId}?api_key=${apiKey}`)
+    .then(res=>res.json())
+    .then(res=> console.log(res))
+}
+
+fillModal()
