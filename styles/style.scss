@@ -36,6 +36,7 @@ input{
 }
 
 body{
+    box-sizing: content-box;
     color: black;
     font-family: $mainFont;
     position: relative;
@@ -44,14 +45,13 @@ body{
         background-color: white;
         display: grid;
         grid-template-columns: 100px auto 100px;
-        height: 100px;
+        grid-template-rows: 100px;
         width: 100%;
         position: fixed;
         outline: none;
         a{
             background-color: $mainColor;
             width: 100px;
-            border: 1px solid $mainColor;
             display: block;
             img{
                 display: block;
@@ -63,13 +63,12 @@ body{
         .find{
             font-size: 20px;
             display: flex;
-            align-items: center;
-            float: right;
             a.searchMovie{
                 background-color: white;
                 border: none;
-                padding-left: 20px; 
                 color: black;
+                line-height: 100px;
+                text-align: center;
                 &:hover{
                     color: $mainColor;
                 }
@@ -110,7 +109,6 @@ body{
     div.bannerContainer{
         padding-top: 100px;
         overflow: hidden;
-        //display: flex;
         justify-content: space-between;
         @media(max-width: $small-break){
             position: relative;
@@ -175,7 +173,6 @@ body{
             background-size: cover; 
             background-position: right top;
             background-repeat: no-repeat;
-            display: flex;
             @media(max-width: $small-break){
                 width: 100%;
                 padding-left: 0;
@@ -198,7 +195,6 @@ body{
     }    
     .movies{
         margin: 100px 40px 50px 150px;
-        background-color: grey;
         @media(max-width: $small-break){
             margin: 10px;
         }

@@ -8,6 +8,7 @@ const initialize = () =>{
     fetchMoviePosters('topRates', 'top_rated', fourArray, 1)
     fetchMoviePosters('upcoming', 'upcoming', fourArray, 1)
     fetchMoviePosters('nowPlaying', 'now_playing', fourArray, 1)
+    if(window.innerWidth <= 700) hideElement('featureNav')
 }
 
 const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
@@ -44,12 +45,14 @@ const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
 
 const allPopularMovies = () =>{
     event.preventDefault()
+    if(window.innerWidth <= 700) addHideClass('featureNav')
     innerHTMLCleaner('popularMovies')
     showElement('popularSection')
     hideElement('topRatesSection')
     hideElement('upcomingSection')
     hideElement('nowPlayingSection')
     hideElement('searchSection')
+    hideElement('h1banner')
     fetchMoviePosters('popularMovies', 'popular', twentyArray)
     hideElement('popularViewAll')
     showElement('popularResults')
@@ -59,12 +62,14 @@ const allPopularMovies = () =>{
 
 const allTopRates = () =>{
     event.preventDefault()
+    if(window.innerWidth <= 700) addHideClass('featureNav')
     innerHTMLCleaner('topRates')
     hideElement('popularSection')
     showElement('topRatesSection')
     hideElement('upcomingSection')
     hideElement('nowPlayingSection')
     hideElement('searchSection')
+    hideElement('h1banner')
     fetchMoviePosters('topRates', 'top_rated', twentyArray)
     hideElement('topRatesViewAll')
     showElement('top_ratedResults')
@@ -74,12 +79,14 @@ const allTopRates = () =>{
 
 const allUpcoming = () =>{
     event.preventDefault()
+    if(window.innerWidth <= 700) addHideClass('featureNav')
     innerHTMLCleaner('upcoming')
     hideElement('popularSection')
     hideElement('topRatesSection')
     showElement('upcomingSection')
     hideElement('nowPlayingSection')
     hideElement('searchSection')
+    hideElement('h1banner')
     fetchMoviePosters('upcoming', 'upcoming', twentyArray)
     hideElement('upcomingViewAll')
     showElement('upcomingResults')
@@ -89,12 +96,14 @@ const allUpcoming = () =>{
 
 const allNowPlaying = () =>{
     event.preventDefault()
+    if(window.innerWidth <= 700) addHideClass('featureNav')
     innerHTMLCleaner('nowPlaying')
     hideElement('popularSection')
     hideElement('topRatesSection')
     hideElement('upcomingSection')
     showElement('nowPlayingSection')
     hideElement('searchSection')
+    hideElement('h1banner')
     fetchMoviePosters('nowPlaying', 'now_playing', twentyArray)
     hideElement('nowPlayingViewAll')
     showElement('now_playingResults')
@@ -108,6 +117,7 @@ const searchMovie = () =>{
     hideElement('upcomingSection')
     hideElement('nowPlayingSection')
     showElement('searchSection')
+    hideElement('h1banner')
     innerHTMLCleaner('search')
     showElement('searchLoad')
     let input = document.getElementById('searchInput')
@@ -195,6 +205,11 @@ const showElement = (elementId) =>{
 const hideElement = (elementId) =>{
     let element = document.getElementById(elementId)
     element.classList.replace('show', 'hide')
+}
+
+const addHideClass = (elementId) =>{
+    let element = document.getElementById(elementId)
+    element.classList.add('hide')
 }
 
 const innerHTMLCleaner = (containerId) =>{
