@@ -1,7 +1,7 @@
 const apiKey = 'e007dc23f3b14243908e46acf9ee53a1'
 const fourArray = [0, 1, 2, 3]
 const twentyArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-
+const peliculaId = 299537
 
 const initialize = () =>{
     fetchMoviePosters('popularMovies', 'popular', fourArray, 1)
@@ -190,7 +190,48 @@ const innerHTMLCleaner = (containerId) =>{
 const fillModal = () =>{
 fetch(`https://api.themoviedb.org/3/movie/${peliculaId}?api_key=${apiKey}`)
     .then(res=>res.json())
-    .then(res=> console.log(res))
+    .then(res=> {
+    let {title, tagline, poster_path, backdrop_path, overview, release_date, genre} = res
+    
+    printTitle(title)
+    printTagLine(tagline)
+    printPosterPath(poster_path)
+    // printBackDropPath(backdrop_path)
+    printOverview(overview)
+    prinReleaseDate(release_date)
+    //printGenre(genre)
+})
+    .catch(error=>console.log(error))
 }
+
+const printTitle = title =>{
+    let modalTitle = document.getElementById('title')
+    modalTitle.innerText = title
+}
+
+const printTagLine = tagline =>{
+    let modalTagline = document.getElementById('subtitle')
+    modalTagline.innerText = tagline
+}
+
+const printOverview = overview =>{
+    let summary = document.getElementById('summary')
+    summary.innerText = overview
+}
+
+const prinReleaseDate = release_date =>{
+    let releaseDate = document.getElementById('releaseDate')
+    releaseDate.innerText =  release_date
+    } 
+
+// const genre = () => {
+//     let modalGenre = document.getElementById('genre')
+//     modalGenre.innerText = genre
+//     }
+
+const printPosterPath = poster_path =>{
+    let frontImage = document.getElementById("frontImage")
+    frontImage.src = `https://image.tmdb.org/t/p/w300${poster_path}`
+} 
 
 fillModal()
