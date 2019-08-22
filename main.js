@@ -192,19 +192,23 @@ const innerHTMLCleaner = (containerId) =>{
     container.innerHTML = ''
 }
 
+
+
+let peliculaId = 299537
+// FUNCION PARA LLENAR EL MODAL
 const fillModal = () =>{
 fetch(`https://api.themoviedb.org/3/movie/${peliculaId}?api_key=${apiKey}`)
     .then(res=>res.json())
     .then(res=> {
-    let {title, tagline, poster_path, backdrop_path, overview, release_date, genre} = res
+    let {title, tagline, poster_path, backdrop_path, overview, release_date, genre:{name}} = res
     
     printTitle(title)
     printTagLine(tagline)
     printPosterPath(poster_path)
-    // printBackDropPath(backdrop_path)
+    //printBackDropPath(backdrop_path)
     printOverview(overview)
     prinReleaseDate(release_date)
-    //printGenre(genre)
+    printGenre(genre)
 })
     .catch(error=>console.log(error))
 }
@@ -229,14 +233,39 @@ const prinReleaseDate = release_date =>{
     releaseDate.innerText =  release_date
     } 
 
-// const genre = () => {
-//     let modalGenre = document.getElementById('genre')
-//     modalGenre.innerText = genre
-//     }
+// PREGUNTAR ESO
+const printGenre = name => {
+    let modalGenre = document.getElementById('genre')
+    modalGenre.innerText = genre.name
+    genre.appendChild(modalGenre)
+}
 
+
+// const printGenre = genre => {
+//     let modalGenre = document.getElementById('genre')
+//     genre.forEach(e =>{
+//     console.log(e)
+//         // let difGenre = document.createElement('p')
+//         // difGenre.innerText = e.name
+//         // modalGenre.appendChild(difGenre)
+//     })
+// }
+    
 const printPosterPath = poster_path =>{
     let frontImage = document.getElementById("frontImage")
     frontImage.src = `https://image.tmdb.org/t/p/w300${poster_path}`
 } 
 
+// const printBackDropPath = backdrop_path =>{
+//     let backdrop = document.getElementById('backdrop')
+//     //backdrop.classList.add(backgroundImage, url(`https://image.tmdb.org/t/p/w300${backdrop_path}`))
+//     backdrop.style.background-image = url(`https://image.tmdb.org/t/p/w300${backdrop_path}`)
+// } 
+
+
 fillModal()
+
+
+// 1 del array genre, poder extraer cada uno de la lista
+// 2 cambiar el background image con una clase
+// 3 intentar con una api que haya encontrado

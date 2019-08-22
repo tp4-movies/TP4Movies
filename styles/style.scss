@@ -70,6 +70,7 @@ body{
                 border: none;
                 padding-left: 20px; 
                 color: black;
+                margin-left: 10px;
                 &:hover{
                     color: $mainColor;
                 }
@@ -148,17 +149,20 @@ body{
                     height: calc((100vh - 100px)/4); 
                     border: 1px dotted grey;
                     background-color: $transparent-white;
+                    :hover{
+                        color: $mainColor;
+                        transition: 0.5s;
+                        transform: scale(1.2);
+                    }
                     @media(max-width: $small-break){
                         margin: 10px;
                     }
                     a{
                         text-decoration: none;
                         color: black;
-                        img{
+                        i{
                             display: block;
-                            margin-left: auto;
-                            margin-right: auto;
-                            margin-top: 30px;
+                            margin: 40px auto 5px auto;
                             width: 20px;
                         }
                         p{

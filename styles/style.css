@@ -63,6 +63,7 @@ body header .find a.searchMovie {
   border: none;
   padding-left: 20px;
   color: black;
+  margin-left: 10px;
 }
 body header .find a.searchMovie:hover {
   color: #ff5757;
@@ -149,6 +150,11 @@ body div.bannerContainer .featureNav ul li {
   border: 1px dotted grey;
   background-color: rgba(255, 255, 255, 0.9);
 }
+body div.bannerContainer .featureNav ul li :hover {
+  color: #ff5757;
+  transition: 0.5s;
+  transform: scale(1.2);
+}
 @media (max-width: 700px) {
   body div.bannerContainer .featureNav ul li {
     margin: 10px;
@@ -158,11 +164,9 @@ body div.bannerContainer .featureNav ul li a {
   text-decoration: none;
   color: black;
 }
-body div.bannerContainer .featureNav ul li a img {
+body div.bannerContainer .featureNav ul li a i {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
+  margin: 40px auto 5px auto;
   width: 20px;
 }
 body div.bannerContainer .featureNav ul li a p {

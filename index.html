@@ -16,7 +16,7 @@
     <header>
         <a href=""><img src="image/pochoclo.png" alt=""></a> 
         <form class="find">
-            <a href="#" onclick="searchMovie()" class="searchMovie"><i class="fas fa-search"></i></a>
+            <a href="#" onclick="searchMovie()" class="searchMovie"><i class="fas fa-search lens"></i></a>
             <input placeholder="Search for a movie..." id="searchInput">
         </form>
         <div class="dropdownIcon">
@@ -28,26 +28,25 @@
             <ul>
                 <li>
                     <a href="#" onclick="allPopularMovies()">
-                        <!-- <svg width="20px" height="20px" xmlns="image/popular.svg"></svg> -->
-                        <img src="image/popular.png" alt="">
+                        <i class="far fa-star"></i>
                         <p>POPULAR</p> 
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="allTopRates()">
-                        <img src="image/top_rated.svg" alt="">
+                        <i class="fas fa-arrow-up"></i>
                         <p>TOP RATES</p> 
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="allUpcoming()">
-                        <img src="image/upcoming.svg" alt="">
+                        <i class="far fa-calendar-alt"></i>
                         <p>UPCOMING</p> 
                     </a>
                 </li>
                 <li>
                     <a href="#" onclick="allNowPlaying()">
-                        <img src="image/now_playing.svg" alt="">
+                        <i class="far fa-play-circle"></i>
                         <p>NOW PLAYING</p> 
                     </a>
                 </li>
@@ -61,7 +60,7 @@
     <!-- MODAL -->
     <section class="movieModal hide" id="movieModal">
         <div class="movieBox">
-            <div class="backdrop">
+            <div class="backdrop" id="backdrop">
                 <a href="#" class="closeMovie" onclick="closeMovie()"><i class="fas fa-times"></i></a>
                 <div class="opacity"></div>
                 <div class="backdropContent">
@@ -92,7 +91,7 @@
         </div>
         <ul class="movies" id="popularMovies">
         </ul>
-        <a href="#" class="load hide" id="popularLoad"">LOAD MORE</a>
+        <a href="#" class="load hide" id="popularLoad">LOAD MORE</a>
     </section>
     <!--TOP RATES-->
     <section class="movies topRates show" id="topRatesSection">
@@ -138,36 +137,5 @@
         <ul class="movies" id="search"></ul>
         <a href="#" class="load hide" id="searchLoad">LOAD MORE</a>
     </section>
-    
-    <!-- MODAL -->
-    <!--<div class="movieModal hide">
-        <div class="boxMovie">
-            <header>
-                <a href="#" onclick="closeMovie()" class="closeMovie"><i class="fas fa-times"></i></a>
-                <img src="image/lionKingBack.jpeg"  class="backImage" alt="">
-                <h3 class="title" id="title" >The Lion King</h3>
-                <span class="subtitle" id="subtitle">The King has Returned.</span>
-            </header>
-            <div>
-                <img src="image/LionKing.jpg" class="frontImage" alt="">
-            </div>
-            <div class="boxInfo" id="boxInfo">
-                <p class="summary" id="summary">Simba idolises his father, King Mufasa, and takes to heart his own royal destiny. But not everyone in the kingdom celebrates the new cub's arrival. Scar, Mufasa's brother—and former heir to the throne—has plans of his own. The battle for Pride Rock is ravaged with betrayal, tragedy and drama, ultimately resulting in Simba's exile. With help from a curious pair of newfound friends, Simba will have to figure out how to grow up and take back what is rightfully his.</p>
-                <div class="subInfo" id="subInfo">
-                    <h5 class="genre" id="genre">GENRES</h5>
-                    <p id="description">Adventure, Animation, Family, Drama, Action</p>
-                </div>
-                <div class="subInfo">
-                    <h5 id="genre">RELEASE DATE</h5>
-                    <p id="description">12 July 2019</p>
-                </div>
-            </div>
-            
-
-
-            
-        </div>
-    </div>-->
-
 </body>
 </html>
