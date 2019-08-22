@@ -32,7 +32,7 @@ const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
                 let image = document.createElement('img')
                 let movieTitle = document.createElement('figcaption')
                 image.src = `https://image.tmdb.org/t/p/w300${res.results[num].poster_path}`
-                movieTitle.innerText = res.results[num].original_title
+                movieTitle.innerText = res.results[num].title
                 figure.appendChild(image)
                 figure.appendChild(movieTitle)
                 anchor.appendChild(figure)
