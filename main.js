@@ -18,6 +18,10 @@ const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
             numbersArray.forEach(num=>{
                 let li = document.createElement('li')
                 let anchor = document.createElement('a')
+                anchor.id = res.results[num].id
+                anchor.onclick = function(){
+                    console.log(anchor.id)//aca va la funcion que crea el modal
+                }
                 let figure = document.createElement('figure')
                 let image = document.createElement('img')
                 let movieTitle = document.createElement('figcaption')
