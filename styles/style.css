@@ -201,6 +201,7 @@ body div.bannerContainer .banner h1 {
 }
 body .movies {
   margin: 100px 40px 50px 150px;
+  background-color: grey;
 }
 @media (max-width: 700px) {
   body .movies {
