@@ -232,6 +232,7 @@ body .movies p.results {
   color: grey;
 }
 body .movies ul {
+  clear: both;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;

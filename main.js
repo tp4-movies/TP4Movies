@@ -15,6 +15,10 @@ const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
     fetch(`https://api.themoviedb.org/3/movie/${category}?api_key=${apiKey}&page=${page}`)
         .then(res=>res.json())
         .then(res=>{
+            if(numbersArray.length === 20){
+                let results = document.getElementById(`${category}Results`)
+                results.innerText = `${res.total_results} results`
+            }
             numbersArray.forEach(num=>{
                 let li = document.createElement('li')
                 let anchor = document.createElement('a')
@@ -34,7 +38,6 @@ const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
                 li.appendChild(anchor)
                 container.appendChild(li)
             })
-            
         })
         .catch(error=>console.log(error))  
 }
@@ -64,7 +67,7 @@ const allTopRates = () =>{
     hideElement('searchSection')
     fetchMoviePosters('topRates', 'top_rated', twentyArray)
     hideElement('topRatesViewAll')
-    showElement('topRatesResults')
+    showElement('top_ratedResults')
     showElement('topRatesLoad')
     clicksCounter('topRatesLoad', 'topRates', 'top_rated')
 }
@@ -94,7 +97,7 @@ const allNowPlaying = () =>{
     hideElement('searchSection')
     fetchMoviePosters('nowPlaying', 'now_playing', twentyArray)
     hideElement('nowPlayingViewAll')
-    showElement('nowPlayingResults')
+    showElement('now_playingResults')
     showElement('nowPlayingLoad')
     clicksCounter('nowPlayingLoad', 'nowPlaying', 'now_playing')
 }
@@ -129,9 +132,16 @@ const searchFetch = (containerId, apiString) =>{
     fetch(`https://api.themoviedb.org/3/search/movie${apiString}`)
             .then(res=>res.json())
             .then(res=>{
+                let results = document.getElementById('searchResults')
+                results.innerText = `${res.total_results} results`
                 twentyArray.forEach(num=>{
                     let li = document.createElement('li')
                     let anchor = document.createElement('a')
+                    anchor.id = res.results[num].id
+                    anchor.classList.add("movieAnchor")
+                    anchor.onclick = function(){
+                        console.log(anchor.id)//aca va la funcion que crea el modal
+                    }
                     let figure = document.createElement('figure')
                     let image = document.createElement('img')
                     let movieTitle = document.createElement('figcaption')
