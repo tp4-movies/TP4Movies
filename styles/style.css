@@ -84,6 +84,12 @@ body header div.dropdownIcon a {
   text-align: center;
   text-justify: center;
   border: none;
+  color: white;
+  transition: all 0.5s;
+}
+body header div.dropdownIcon a:hover {
+  color: #ff5757;
+  background-color: white;
 }
 body header div.dropdownIcon i {
   line-height: 100px;
@@ -234,14 +240,19 @@ body .movies ul {
 body .movies ul li {
   margin-top: 20px;
 }
-body .movies ul li a {
+body .movies ul li a.movieAnchor {
   text-decoration: none;
   color: grey;
+  cursor: pointer;
 }
-body .movies ul li a img {
+body .movies ul li a.movieAnchor img {
   max-width: 200px;
+  transition: all 0.5s;
 }
-body .movies ul li a figcaption {
+body .movies ul li a.movieAnchor img:hover {
+  box-shadow: 4px 2px 46px -10px rgba(0, 0, 0, 0.7);
+}
+body .movies ul li a.movieAnchor figcaption {
   font-size: 15px;
   max-width: 200px;
   text-align: center;

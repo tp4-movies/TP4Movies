@@ -92,6 +92,12 @@ body{
                 text-align: center;
                 text-justify: center;
                 border: none;
+                color: white;
+                transition: all 0.5s;
+                &:hover{
+                    color: $mainColor;
+                    background-color: white;
+                }
             }
             i{
                 line-height: 100px;
@@ -226,11 +232,17 @@ body{
             margin: 20px 0;
             li{
                 margin-top: 20px;
-                a{
+                a.movieAnchor{
                     text-decoration: none;
                     color: grey;
+                    cursor: pointer;
                     img{
                         max-width: 200px;
+                        transition: all 0.5s;
+                        &:hover{
+                            box-shadow: 4px 2px 46px -10px rgba(0,0,0,0.7);
+                        }
+                        
                     }
                     figcaption{
                         font-size: 15px;

@@ -19,6 +19,7 @@ const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
                 let li = document.createElement('li')
                 let anchor = document.createElement('a')
                 anchor.id = res.results[num].id
+                anchor.classList.add("movieAnchor")
                 anchor.onclick = function(){
                     console.log(anchor.id)//aca va la funcion que crea el modal
                 }
