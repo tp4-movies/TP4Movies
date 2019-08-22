@@ -1,7 +1,7 @@
 const apiKey = 'e007dc23f3b14243908e46acf9ee53a1'
-const fourArray = [0, 1, 2, 3]
-const twentyArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-const peliculaId = 299537
+const fourArray = [...Array(4).keys()]
+const twentyArray = [...Array(20).keys()]
+
 
 const initialize = () =>{
     fetchMoviePosters('popularMovies', 'popular', fourArray, 1)
@@ -18,6 +18,11 @@ const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
             numbersArray.forEach(num=>{
                 let li = document.createElement('li')
                 let anchor = document.createElement('a')
+                anchor.id = res.results[num].id
+                anchor.classList.add("movieAnchor")
+                anchor.onclick = function(){
+                    console.log(anchor.id)//aca va la funcion que crea el modal
+                }
                 let figure = document.createElement('figure')
                 let image = document.createElement('img')
                 let movieTitle = document.createElement('figcaption')
