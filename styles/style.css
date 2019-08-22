@@ -41,16 +41,32 @@ body header {
   position: fixed;
   outline: none;
 }
+@media (max-width: 700px) {
+  body header {
+    grid-template-columns: 70px auto 70px;
+    grid-template-rows: 70px;
+  }
+}
 body header a {
   background-color: #ff5757;
   width: 100px;
   display: block;
+}
+@media (max-width: 700px) {
+  body header a {
+    width: 70px;
+  }
 }
 body header a img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 80px;
+}
+@media (max-width: 700px) {
+  body header a img {
+    width: 60px;
+  }
 }
 body header .find {
   font-size: 20px;
@@ -62,6 +78,11 @@ body header .find a.searchMovie {
   color: black;
   line-height: 100px;
   text-align: center;
+}
+@media (max-width: 700px) {
+  body header .find a.searchMovie {
+    line-height: 70px;
+  }
 }
 body header .find a.searchMovie:hover {
   color: #ff5757;
@@ -77,6 +98,12 @@ body header div.dropdownIcon {
   float: right;
   position: absolute;
   right: 0;
+}
+@media (max-width: 700px) {
+  body header div.dropdownIcon {
+    height: 70px;
+    font-size: 30px;
+  }
 }
 body header div.dropdownIcon a {
   height: 100%;
@@ -94,6 +121,11 @@ body header div.dropdownIcon i {
   line-height: 100px;
 }
 @media (max-width: 700px) {
+  body header div.dropdownIcon i {
+    line-height: 70px;
+  }
+}
+@media (max-width: 700px) {
   body header div.dropdownIcon {
     display: block;
   }
@@ -106,6 +138,7 @@ body div.bannerContainer {
 @media (max-width: 700px) {
   body div.bannerContainer {
     position: relative;
+    padding-top: 70px;
   }
 }
 body div.bannerContainer .featureNav {
@@ -117,7 +150,7 @@ body div.bannerContainer .featureNav {
 }
 @media (max-width: 700px) {
   body div.bannerContainer .featureNav {
-    margin-top: 100px;
+    margin-top: 70px;
     position: absolute;
     float: none;
     width: 100%;
@@ -139,6 +172,7 @@ body div.bannerContainer .featureNav ul {
     flex-direction: row;
     background-color: rgba(255, 255, 255, 0.9);
     flex-wrap: wrap;
+    height: calc(100vh - 70px);
   }
 }
 body div.bannerContainer .featureNav ul li {
@@ -179,6 +213,7 @@ body div.bannerContainer .banner {
   body div.bannerContainer .banner {
     width: 100%;
     padding-left: 0;
+    height: calc(100vh - 70px);
   }
 }
 body div.bannerContainer .banner h1 {
