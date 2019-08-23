@@ -36,6 +36,7 @@ input{
 }
 
 body{
+    box-sizing: content-box;
     color: black;
     font-family: $mainFont;
     position: relative;
@@ -44,33 +45,44 @@ body{
         background-color: white;
         display: grid;
         grid-template-columns: 100px auto 100px;
-        height: 100px;
+        grid-template-rows: 100px;
         width: 100%;
         position: fixed;
         outline: none;
+        @media(max-width: $small-break){
+            grid-template-columns: 70px auto 70px;
+            grid-template-rows: 70px;
+        }
         a{
             background-color: $mainColor;
             width: 100px;
-            border: 1px solid $mainColor;
             display: block;
+            @media(max-width: $small-break){
+                width: 70px;
+            }
             img{
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
                 width: 80px;
+                @media(max-width: $small-break){
+                    width: 60px;
+                }
             }
         }
         .find{
             font-size: 20px;
             display: flex;
-            align-items: center;
-            float: right;
             a.searchMovie{
                 background-color: white;
                 border: none;
-                padding-left: 20px; 
                 color: black;
+                line-height: 100px;
+                text-align: center;
                 margin-left: 10px;
+                @media(max-width: $small-break){
+                    line-height: 70px;
+                }
                 &:hover{
                     color: $mainColor;
                 }
@@ -88,6 +100,10 @@ body{
             float: right;
             position: absolute;
             right: 0;
+            @media(max-width: $small-break){
+                height: 70px;
+                font-size: 30px;
+            }
             a{
                 height: 100%;
                 text-align: center;
@@ -102,6 +118,9 @@ body{
             }
             i{
                 line-height: 100px;
+                @media(max-width: $small-break){
+                    line-height: 70px;
+                }
             }
             @media(max-width: $small-break){
                 display: block;
@@ -111,10 +130,10 @@ body{
     div.bannerContainer{
         padding-top: 100px;
         overflow: hidden;
-        //display: flex;
         justify-content: space-between;
         @media(max-width: $small-break){
             position: relative;
+            padding-top: 70px;
         }
         .featureNav{
             float: left;
@@ -123,7 +142,7 @@ body{
             z-index: 1;
             position: fixed;
             @media(max-width: $small-break){
-                margin-top: 100px;
+                margin-top: 70px;
                 position: absolute;
                 float: none;
                 width: 100%;
@@ -142,6 +161,7 @@ body{
                     flex-direction: row;
                     background-color: $transparent-white;
                     flex-wrap: wrap;
+                    height: calc(100vh - 70px);
                 }
                 li{
                     margin: auto;
@@ -179,10 +199,10 @@ body{
             background-size: cover; 
             background-position: right top;
             background-repeat: no-repeat;
-            display: flex;
             @media(max-width: $small-break){
                 width: 100%;
                 padding-left: 0;
+                height: calc(100vh - 70px)
             }
             h1{
                 color: white;
@@ -230,6 +250,7 @@ body{
             color: grey;
         }
         ul{
+            clear: both;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;

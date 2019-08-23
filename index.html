@@ -24,7 +24,7 @@
         </div>
     </header>
     <div class="bannerContainer show">
-        <nav class="featureNav" id="featureNav">
+        <nav class="featureNav show" id="featureNav">
             <ul>
                 <li>
                     <a href="#" onclick="allPopularMovies()">
@@ -52,7 +52,7 @@
                 </li>
             </ul>
         </nav>
-        <div class="banner show" id="banner">
+        <div class="banner show" id="h1banner">
             <h1>MOVIE TIME</h1>
         </div>
     </div>
@@ -87,7 +87,7 @@
             <a href="#" class="show" id="popularViewAll" onclick="allPopularMovies()">
                 <p>View all  <i class="fas fa-arrow-right"></i></p>
             </a> 
-            <p class="results hide" id="popularResults">RESULTS</p>
+            <p class="results hide" id="popularResults"></p>
         </div>
         <ul class="movies" id="popularMovies">
         </ul>
@@ -100,7 +100,7 @@
             <a href="#" class="show" id="topRatesViewAll" onclick="allTopRates()">
                 <p>View all  <i class="fas fa-arrow-right"></i></p>
             </a>
-            <p class="results hide" id="topRatesResults">RESULTS</p>
+            <p class="results hide" id="top_ratedResults"></p>
         </div>
         <ul class="movies" id="topRates">
         </ul>
@@ -113,7 +113,7 @@
             <a href="#" class="show" id="upcomingViewAll" onclick="allUpcoming()">
                 <p>View all  <i class="fas fa-arrow-right"></i></p>
             </a>
-            <p class="results hide" id="upcomingResults">RESULTS</p>
+            <p class="results hide" id="upcomingResults"></p>
         </div>
         <ul class="movies upcoming" id="upcoming">
         </ul>
@@ -126,7 +126,7 @@
             <a href="#" class="show" id="nowPlayingViewAll" onclick="allNowPlaying()">
                 <p>View all  <i class="fas fa-arrow-right"></i></p>
             </a>
-            <p class="results hide" id="nowPlayingResults">RESULTS</p>
+            <p class="results hide" id="now_playingResults"></p>
         </div>
         <ul class="movies" id="nowPlaying">
         </ul>
@@ -134,6 +134,7 @@
     </section>
     <!--SEARCH-->
     <section class="movies search hide" id="searchSection">
+        <p class="results" id="searchResults"></p>
         <ul class="movies" id="search"></ul>
         <a href="#" class="load hide" id="searchLoad">LOAD MORE</a>
     </section>

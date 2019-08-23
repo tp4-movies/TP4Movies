@@ -8,6 +8,7 @@ const initialize = () =>{
     fetchMoviePosters('topRates', 'top_rated', fourArray, 1)
     fetchMoviePosters('upcoming', 'upcoming', fourArray, 1)
     fetchMoviePosters('nowPlaying', 'now_playing', fourArray, 1)
+    if(window.innerWidth <= 700) hideElement('featureNav')
 }
 
 const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
@@ -15,6 +16,10 @@ const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
     fetch(`https://api.themoviedb.org/3/movie/${category}?api_key=${apiKey}&page=${page}`)
         .then(res=>res.json())
         .then(res=>{
+            if(numbersArray.length === 20){
+                let results = document.getElementById(`${category}Results`)
+                results.innerText = `${res.total_results} results`
+            }
             numbersArray.forEach(num=>{
                 let li = document.createElement('li')
                 let anchor = document.createElement('a')
@@ -29,26 +34,27 @@ const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
                 let image = document.createElement('img')
                 let movieTitle = document.createElement('figcaption')
                 image.src = `https://image.tmdb.org/t/p/w300${res.results[num].poster_path}`
-                movieTitle.innerText = res.results[num].original_title
+                movieTitle.innerText = res.results[num].title
                 figure.appendChild(image)
                 figure.appendChild(movieTitle)
                 anchor.appendChild(figure)
                 li.appendChild(anchor)
                 container.appendChild(li)
             })
-            
         })
         .catch(error=>console.log(error))  
 }
 
 const allPopularMovies = () =>{
     event.preventDefault()
+    if(window.innerWidth <= 700) addHideClass('featureNav')
     innerHTMLCleaner('popularMovies')
     showElement('popularSection')
     hideElement('topRatesSection')
     hideElement('upcomingSection')
     hideElement('nowPlayingSection')
     hideElement('searchSection')
+    hideElement('h1banner')
     fetchMoviePosters('popularMovies', 'popular', twentyArray)
     hideElement('popularViewAll')
     showElement('popularResults')
@@ -58,27 +64,31 @@ const allPopularMovies = () =>{
 
 const allTopRates = () =>{
     event.preventDefault()
+    if(window.innerWidth <= 700) addHideClass('featureNav')
     innerHTMLCleaner('topRates')
     hideElement('popularSection')
     showElement('topRatesSection')
     hideElement('upcomingSection')
     hideElement('nowPlayingSection')
     hideElement('searchSection')
+    hideElement('h1banner')
     fetchMoviePosters('topRates', 'top_rated', twentyArray)
     hideElement('topRatesViewAll')
-    showElement('topRatesResults')
+    showElement('top_ratedResults')
     showElement('topRatesLoad')
     clicksCounter('topRatesLoad', 'topRates', 'top_rated')
 }
 
 const allUpcoming = () =>{
     event.preventDefault()
+    if(window.innerWidth <= 700) addHideClass('featureNav')
     innerHTMLCleaner('upcoming')
     hideElement('popularSection')
     hideElement('topRatesSection')
     showElement('upcomingSection')
     hideElement('nowPlayingSection')
     hideElement('searchSection')
+    hideElement('h1banner')
     fetchMoviePosters('upcoming', 'upcoming', twentyArray)
     hideElement('upcomingViewAll')
     showElement('upcomingResults')
@@ -88,15 +98,17 @@ const allUpcoming = () =>{
 
 const allNowPlaying = () =>{
     event.preventDefault()
+    if(window.innerWidth <= 700) addHideClass('featureNav')
     innerHTMLCleaner('nowPlaying')
     hideElement('popularSection')
     hideElement('topRatesSection')
     hideElement('upcomingSection')
     showElement('nowPlayingSection')
     hideElement('searchSection')
+    hideElement('h1banner')
     fetchMoviePosters('nowPlaying', 'now_playing', twentyArray)
     hideElement('nowPlayingViewAll')
-    showElement('nowPlayingResults')
+    showElement('now_playingResults')
     showElement('nowPlayingLoad')
     clicksCounter('nowPlayingLoad', 'nowPlaying', 'now_playing')
 }
@@ -107,6 +119,7 @@ const searchMovie = () =>{
     hideElement('upcomingSection')
     hideElement('nowPlayingSection')
     showElement('searchSection')
+    hideElement('h1banner')
     innerHTMLCleaner('search')
     showElement('searchLoad')
     let input = document.getElementById('searchInput')
@@ -131,9 +144,16 @@ const searchFetch = (containerId, apiString) =>{
     fetch(`https://api.themoviedb.org/3/search/movie${apiString}`)
             .then(res=>res.json())
             .then(res=>{
+                let results = document.getElementById('searchResults')
+                results.innerText = `${res.total_results} results`
                 twentyArray.forEach(num=>{
                     let li = document.createElement('li')
                     let anchor = document.createElement('a')
+                    anchor.id = res.results[num].id
+                    anchor.classList.add("movieAnchor")
+                    anchor.onclick = function(){
+                        console.log(anchor.id)//aca va la funcion que crea el modal
+                    }
                     let figure = document.createElement('figure')
                     let image = document.createElement('img')
                     let movieTitle = document.createElement('figcaption')
@@ -187,6 +207,11 @@ const showElement = (elementId) =>{
 const hideElement = (elementId) =>{
     let element = document.getElementById(elementId)
     element.classList.replace('show', 'hide')
+}
+
+const addHideClass = (elementId) =>{
+    let element = document.getElementById(elementId)
+    element.classList.add('hide')
 }
 
 const innerHTMLCleaner = (containerId) =>{
