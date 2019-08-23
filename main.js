@@ -260,9 +260,10 @@ const prinReleaseDate = release_date =>{
     releaseDate.innerText =  release_date
     } 
 
-// PREGUNTAR ESO
+
 const printGenre = genres => {
     let modalGenre = document.getElementById('genre')
+    modalGenre.innerHTML= ""
     genres.forEach((e, index)=>{
         let gen = document.createElement('span')
         gen.innerText = index === genres.length - 1 ? `${e.name}` : `${e.name}, `
