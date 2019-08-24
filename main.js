@@ -132,12 +132,21 @@ const searchMovie = () =>{
 }
 
 const closeMovie = () =>{
+    event.preventDefault()
     hideElement('movieModal')
+    innerHTMLCleaner("title")
+    innerHTMLCleaner("subtitle")
+    innerHTMLCleaner("frontImage")
+    innerHTMLCleaner("summary")
+    innerHTMLCleaner("genre")
+    innerHTMLCleaner("releaseDate")
 }
 
 const showMovieInfo = () =>{
     showElement('movieModal')
 }
+
+
 
 const searchFetch = (containerId, apiString) =>{
     let container = document.getElementById(containerId)
@@ -233,7 +242,7 @@ fetch(`https://api.themoviedb.org/3/movie/${peliculaId}?api_key=${apiKey}`)
     printTagLine(tagline)
     printPosterPath(poster_path)
     printBackDropPath(backdrop_path)
-    printOverview(overview)
+    printOverview(overview) 
     prinReleaseDate(release_date)
     printGenre(genres)
 })
@@ -282,7 +291,6 @@ const printBackDropPath = backdrop_path =>{
     //backdrop.classList.add('backgroundImage: url(`https://image.tmdb.org/t/p/w300${backdrop_path}`)')
     backdrop.style.backgroundImage = "url(url)"
 } 
-
 
 fillModal()
 
