@@ -309,7 +309,7 @@ const printOverview = overview =>{
 
 const prinReleaseDate = release_date =>{
     let releaseDate = document.getElementById('releaseDate')
-    releaseDate.innerText =  release_date
+    releaseDate.innerText = release_date
     } 
 
 
@@ -336,7 +336,6 @@ const printBackDropPath = backdrop_path =>{
 } 
 
 fillModal()
-
 
 
 // 2 cambiar el background image con una clase
