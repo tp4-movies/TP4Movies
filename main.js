@@ -1,6 +1,7 @@
 const apiKey = 'e007dc23f3b14243908e46acf9ee53a1'
 const fourArray = [...Array(4).keys()]
 const twentyArray = [...Array(20).keys()]
+let lastRequest
 
 
 const initialize = () =>{
@@ -124,7 +125,6 @@ const searchMovie = () =>{
     showElement('searchLoad')
     let input = document.getElementById('searchInput')
     let searchInput = input.value
-    input.value = ''
     if(searchInput !== ''){
         searchFetch('search', `?api_key=${apiKey}&query=${searchInput}&page=1`)
         searchClicksCounter('searchLoad', 'search', searchInput)
@@ -161,7 +161,8 @@ const searchFetch = (containerId, apiString) =>{
                     anchor.id = res.results[num].id
                     anchor.classList.add("movieAnchor")
                     anchor.onclick = function(){
-                        console.log(anchor.id)//aca va la funcion que crea el modal
+                        showMovieInfo()
+                        fillModal(anchor.id)
                     }
                     let figure = document.createElement('figure')
                     let image = document.createElement('img')
@@ -227,6 +228,46 @@ const innerHTMLCleaner = (containerId) =>{
     let container = document.getElementById(containerId)
     container.innerHTML = ''
 }
+
+//funcion que hizo Mike del search autocomplete
+const handleSearch = () =>{
+    let query = event.target.value
+    if (query.length >= 2 || query !== lastRequest) {
+        showElement('searchAutocomplete')
+		lastRequest = query;
+		fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`)
+			.then((res) => res.json())
+			.then((res) => {
+                printQueryResults(res.results)
+                searchMovie()
+            })
+    }
+    if(event.keyCode === 13){
+        searchMovie()
+        hideElement('searchAutocomplete')
+    }
+}
+
+const printQueryResults = (results) => {
+	const container = document.getElementById('searchAutocomplete');
+	container.innerHTML = '';
+	results.forEach((result, index) => {
+        if(index < 10){
+            let movie = document.createElement('a');
+            let li = document.createElement('li')
+            let title = result.title === result.original_title ? result.title : `${result.title} (${result.original_title})`;
+            movie.innerText = title;
+            movie.href = '#';
+            movie.onclick = () =>{
+                showMovieInfo()
+                fillModal(result.id)
+                innerHTMLCleaner('searchAutocomplete')
+            } 
+            li.appendChild(movie)
+            container.appendChild(li);
+        }
+	});
+};
 
 
 

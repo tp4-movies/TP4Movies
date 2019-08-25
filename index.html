@@ -17,7 +17,8 @@
         <a href=""><img src="image/pochoclo.png" alt=""></a> 
         <form class="find">
             <a href="#" onclick="searchMovie()" class="searchMovie"><i class="fas fa-search lens"></i></a>
-            <input placeholder="Search for a movie..." id="searchInput">
+            <input placeholder="Search for a movie..." id="searchInput" onkeyup="handleSearch()">
+            <ul class="show" id="searchAutocomplete"></ul>
         </form>
         <div class="dropdownIcon">
             <a href="#" onclick="dropdownMenu()"><i class="fas fa-bars"></i></a>

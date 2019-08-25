@@ -49,6 +49,7 @@ body{
         width: 100%;
         position: fixed;
         outline: none;
+        border-bottom: 1px solid $mainColor;
         @media(max-width: $small-break){
             grid-template-columns: 70px auto 70px;
             grid-template-rows: 70px;
@@ -73,6 +74,7 @@ body{
         .find{
             font-size: 20px;
             display: flex;
+            position: relative;
             a.searchMovie{
                 background-color: white;
                 border: none;
@@ -91,6 +93,25 @@ body{
             input{
                 font-size: 20px;
                 border: none;
+            }
+            ul{
+                position: absolute;
+                max-width: 500px;
+                top: 100px;
+                left: 100px;
+                background-color: white;
+                border: 1px solid $mainColor;
+                border-top: none;
+                a{
+                    width: 300px;
+                    background-color: white;
+                    padding: 0 10px 5px;
+                    text-decoration: none;
+                    color: grey;
+                    &:hover{
+                        color: $mainColor;
+                    }
+                }
             }
         }
         div.dropdownIcon{
@@ -377,9 +398,7 @@ body{
 .hide{
     display: none;
 }
-.temporaryAnchor{
-    margin-left: 100px;
-}
+
 
 
 

@@ -40,6 +40,7 @@ body header {
   width: 100%;
   position: fixed;
   outline: none;
+  border-bottom: 1px solid #ff5757;
 }
 @media (max-width: 700px) {
   body header {
@@ -71,6 +72,7 @@ body header a img {
 body header .find {
   font-size: 20px;
   display: flex;
+  position: relative;
 }
 body header .find a.searchMovie {
   background-color: white;
@@ -91,6 +93,25 @@ body header .find a.searchMovie:hover {
 body header .find input {
   font-size: 20px;
   border: none;
+}
+body header .find ul {
+  position: absolute;
+  max-width: 500px;
+  top: 100px;
+  left: 100px;
+  background-color: white;
+  border: 1px solid #ff5757;
+  border-top: none;
+}
+body header .find ul a {
+  width: 300px;
+  background-color: white;
+  padding: 0 10px 5px;
+  text-decoration: none;
+  color: grey;
+}
+body header .find ul a:hover {
+  color: #ff5757;
 }
 body header div.dropdownIcon {
   display: none;
@@ -393,10 +414,6 @@ body .movieModal .movieBox .frontImage {
 
 .hide {
   display: none;
-}
-
-.temporaryAnchor {
-  margin-left: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */
