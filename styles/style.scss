@@ -84,7 +84,7 @@ body{
                 text-align: center;
                 margin-left: 10px;
                 @media(max-width: $small-break){
-                    line-height: 70px;
+                    display: none;
                 }
                 &:hover{
                     color: $mainColor;
@@ -285,6 +285,9 @@ body{
                     img{
                         max-width: 200px;
                         transition: all 0.5s;
+                        @media(max-width: $small-break){
+                            max-width: 120px;
+                        }
                         &:hover{
                             box-shadow: 4px 2px 46px -10px rgba(0,0,0,0.7);
                         }
@@ -294,6 +297,9 @@ body{
                         font-size: 15px;
                         max-width: 200px;
                         text-align: center;
+                        @media(max-width: $small-break){
+                            max-width: 120px;
+                        }
                     }
                 }
             }

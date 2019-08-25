@@ -84,7 +84,7 @@ body header .find a.searchMovie {
 }
 @media (max-width: 700px) {
   body header .find a.searchMovie {
-    line-height: 70px;
+    display: none;
   }
 }
 body header .find a.searchMovie:hover {
@@ -307,6 +307,11 @@ body .movies ul li a.movieAnchor img {
   max-width: 200px;
   transition: all 0.5s;
 }
+@media (max-width: 700px) {
+  body .movies ul li a.movieAnchor img {
+    max-width: 120px;
+  }
+}
 body .movies ul li a.movieAnchor img:hover {
   box-shadow: 4px 2px 46px -10px rgba(0, 0, 0, 0.7);
 }
@@ -314,6 +319,11 @@ body .movies ul li a.movieAnchor figcaption {
   font-size: 15px;
   max-width: 200px;
   text-align: center;
+}
+@media (max-width: 700px) {
+  body .movies ul li a.movieAnchor figcaption {
+    max-width: 120px;
+  }
 }
 body .movies a.load {
   border: 1px solid #ff5757;
