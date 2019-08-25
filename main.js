@@ -271,9 +271,6 @@ const printQueryResults = (results) => {
 	});
 };
 
-
-
-
 // FUNCION PARA LLENAR EL MODAL
 const fillModal = peliculaId =>{
 fetch(`https://api.themoviedb.org/3/movie/${peliculaId}?api_key=${apiKey}`)
@@ -334,9 +331,3 @@ const printBackDropPath = backdrop_path =>{
     //backdrop.classList.add('backgroundImage: url(`https://image.tmdb.org/t/p/w300${backdrop_path}`)')
     backdrop.style.backgroundImage = "url(url)"
 } 
-
-fillModal()
-
-
-// 2 cambiar el background image con una clase
-// 3 intentar con una api que haya encontrado
