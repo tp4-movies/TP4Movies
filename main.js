@@ -245,6 +245,8 @@ const handleSearch = () =>{
     if(event.keyCode === 13){
         searchMovie()
         hideElement('searchAutocomplete')
+        let input = document.getElementById('searchInput')
+        input.value = ''
     }
 }
 
