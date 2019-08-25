@@ -24,6 +24,7 @@ time, mark, audio, video {
 $mainFont: 'Roboto', sans-serif;
 $fontTitle: 'Josefin Sans', sans-serif;
 $mainColor: #ff5757;
+$lightColor: #FDF1F1;
 
 $small-break: 700px;
 
@@ -49,7 +50,7 @@ body{
         width: 100%;
         position: fixed;
         outline: none;
-        border-bottom: 1px solid $mainColor;
+        background-color: $lightColor;
         @media(max-width: $small-break){
             grid-template-columns: 70px auto 70px;
             grid-template-rows: 70px;
@@ -76,7 +77,7 @@ body{
             display: flex;
             position: relative;
             a.searchMovie{
-                background-color: white;
+                background: $lightColor;
                 border: none;
                 color: black;
                 line-height: 100px;
@@ -93,21 +94,20 @@ body{
             input{
                 font-size: 20px;
                 border: none;
+                background-color: $lightColor;
             }
             ul{
                 position: absolute;
                 max-width: 500px;
                 top: 100px;
                 left: 100px;
-                background-color: white;
-                border: 1px solid $mainColor;
-                border-top: none;
+                background-color: $lightColor;
                 a{
                     width: 300px;
-                    background-color: white;
                     padding: 0 10px 5px;
                     text-decoration: none;
                     color: grey;
+                    background-color: $lightColor;
                     &:hover{
                         color: $mainColor;
                     }

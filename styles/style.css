@@ -40,7 +40,7 @@ body header {
   width: 100%;
   position: fixed;
   outline: none;
-  border-bottom: 1px solid #ff5757;
+  background-color: #FDF1F1;
 }
 @media (max-width: 700px) {
   body header {
@@ -75,7 +75,7 @@ body header .find {
   position: relative;
 }
 body header .find a.searchMovie {
-  background-color: white;
+  background: #FDF1F1;
   border: none;
   color: black;
   line-height: 100px;
@@ -93,22 +93,21 @@ body header .find a.searchMovie:hover {
 body header .find input {
   font-size: 20px;
   border: none;
+  background-color: #FDF1F1;
 }
 body header .find ul {
   position: absolute;
   max-width: 500px;
   top: 100px;
   left: 100px;
-  background-color: white;
-  border: 1px solid #ff5757;
-  border-top: none;
+  background-color: #FDF1F1;
 }
 body header .find ul a {
   width: 300px;
-  background-color: white;
   padding: 0 10px 5px;
   text-decoration: none;
   color: grey;
+  background-color: #FDF1F1;
 }
 body header .find ul a:hover {
   color: #ff5757;
