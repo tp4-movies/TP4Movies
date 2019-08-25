@@ -136,6 +136,7 @@ const closeMovie = () =>{
     hideElement('movieModal')
     innerHTMLCleaner("title")
     innerHTMLCleaner("subtitle")
+    innerHTMLCleaner("backgroundImage")
     innerHTMLCleaner("frontImage")
     innerHTMLCleaner("summary")
     innerHTMLCleaner("genre")
@@ -326,8 +327,7 @@ const printPosterPath = poster_path =>{
 } 
 
 const printBackDropPath = backdrop_path =>{
-    let url = `https://image.tmdb.org/t/p/w300${backdrop_path}`
-    let backdrop = document.getElementById('backdrop')
-    //backdrop.classList.add('backgroundImage: url(`https://image.tmdb.org/t/p/w300${backdrop_path}`)')
-    backdrop.style.backgroundImage = "url(url)"
+    let image = document.getElementById('backgroundImage')
+    image.src = `https://image.tmdb.org/t/p/w500${backdrop_path}`
+    
 } 

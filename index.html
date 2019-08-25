@@ -12,9 +12,9 @@
     <title>Movie Page</title>
     <script src="main.js" type="text/javascript"></script>
 </head>
-<body onload="initialize()">
+<body onload="initialize()" id="body">
     <header>
-        <a href=""><img src="image/pochoclo.png" alt=""></a> 
+        <a href=""><img src="image/pochoclo.png"></a> 
         <form class="find">
             <a href="#" onclick="searchMovieOnclick()" class="searchMovie"><i class="fas fa-search lens"></i></a>
             <input placeholder="Search for a movie..." id="searchInput" onkeyup="handleSearch()">
@@ -57,11 +57,11 @@
             <h1>MOVIE TIME</h1>
         </div>
     </div>
-    
     <!-- MODAL -->
     <section class="movieModal hide" id="movieModal">
         <div class="movieBox">
             <div class="backdrop" id="backdrop">
+                <img class="backgroundImage" id="backgroundImage">
                 <a href="#" class="closeMovie" onclick="closeMovie()"><i class="fas fa-times"></i></a>
                 <div class="opacity"></div>
                 <div class="backdropContent">
