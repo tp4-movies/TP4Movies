@@ -146,7 +146,10 @@ const showMovieInfo = () =>{
     showElement('movieModal')
 }
 
-
+const searchMovieOnclick = () =>{
+    searchMovie()
+    hideElement('searchAutocomplete')
+}
 
 const searchFetch = (containerId, apiString) =>{
     let container = document.getElementById(containerId)
@@ -232,7 +235,7 @@ const innerHTMLCleaner = (containerId) =>{
 //funcion que hizo Mike del search autocomplete
 const handleSearch = () =>{
     let query = event.target.value
-    if (query.length >= 2 || query !== lastRequest) {
+    if (query.length >= 2 || (event.keyCode === 13 && query !== lastRequest)) {
         showElement('searchAutocomplete')
 		lastRequest = query;
 		fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`)
@@ -243,10 +246,7 @@ const handleSearch = () =>{
             })
     }
     if(event.keyCode === 13){
-        searchMovie()
         hideElement('searchAutocomplete')
-        let input = document.getElementById('searchInput')
-        input.value = ''
     }
 }
 
