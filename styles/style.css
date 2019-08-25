@@ -102,6 +102,11 @@ body header .find ul {
   left: 100px;
   background-color: #FDF1F1;
 }
+@media (max-width: 700px) {
+  body header .find ul {
+    display: none;
+  }
+}
 body header .find ul a {
   width: 300px;
   padding: 0 10px 5px;

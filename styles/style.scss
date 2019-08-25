@@ -102,6 +102,9 @@ body{
                 top: 100px;
                 left: 100px;
                 background-color: $lightColor;
+                @media(max-width: $small-break){
+                    display: none;
+                }
                 a{
                     width: 300px;
                     padding: 0 10px 5px;
