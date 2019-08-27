@@ -336,6 +336,10 @@ body{
             margin: 30px auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
+            @media (max-width: $small-break){
+                margin: 0;
+                width: 100%;
+            }
             div.backdrop{
                 background-color: black;
                 grid-column: 1 / span 2;
@@ -372,14 +376,25 @@ body{
                     top: 50%;
                     left: calc(50% + 20px);
                     transform: translateY(-50%);
+                    @media(max-width: $small-break){
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%)
+                    }
                     h3{
                         color: $mainColor;
                         font-size: 40px;
                         margin-bottom: 10px;
+                        @media(max-width: $small-break){
+                            font-size: 25px;
+                        }
                     }
                     h4{
                         color: $mainColor;
-                        font-size: 25px;
+                        font-size: 30px;
+                        @media(max-width: $small-break){
+                            font-size: 15px;
+                        }
                     }
                 }
             }
@@ -389,6 +404,9 @@ body{
                 grid-column: 1 / span 2;
                 .boxInfoContent{
                     margin: 20px 20px 20px calc(50% + 20px);
+                    @media(max-width: $small-break){
+                        margin: 10px;
+                    }
                     p{
                         font-size: 14px;
                         text-align: justify;
@@ -406,6 +424,9 @@ body{
                 left: 40px;
                 top: 40px;
                 z-index: 4;
+                @media(max-width: $small-break){
+                    display: none;
+                }
             }
         }
         

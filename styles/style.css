@@ -360,6 +360,12 @@ body .movieModal .movieBox {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+@media (max-width: 700px) {
+  body .movieModal .movieBox {
+    margin: 0;
+    width: 100%;
+  }
+}
 body .movieModal .movieBox div.backdrop {
   background-color: black;
   grid-column: 1/span 2;
@@ -398,14 +404,31 @@ body .movieModal .movieBox div.backdrop .backdropContent {
   left: calc(50% + 20px);
   transform: translateY(-50%);
 }
+@media (max-width: 700px) {
+  body .movieModal .movieBox div.backdrop .backdropContent {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 body .movieModal .movieBox div.backdrop .backdropContent h3 {
   color: #ff5757;
   font-size: 40px;
   margin-bottom: 10px;
 }
+@media (max-width: 700px) {
+  body .movieModal .movieBox div.backdrop .backdropContent h3 {
+    font-size: 25px;
+  }
+}
 body .movieModal .movieBox div.backdrop .backdropContent h4 {
   color: #ff5757;
-  font-size: 25px;
+  font-size: 30px;
+}
+@media (max-width: 700px) {
+  body .movieModal .movieBox div.backdrop .backdropContent h4 {
+    font-size: 15px;
+  }
 }
 body .movieModal .movieBox div.boxInfo {
   background-color: white;
@@ -414,6 +437,11 @@ body .movieModal .movieBox div.boxInfo {
 }
 body .movieModal .movieBox div.boxInfo .boxInfoContent {
   margin: 20px 20px 20px calc(50% + 20px);
+}
+@media (max-width: 700px) {
+  body .movieModal .movieBox div.boxInfo .boxInfoContent {
+    margin: 10px;
+  }
 }
 body .movieModal .movieBox div.boxInfo .boxInfoContent p {
   font-size: 14px;
@@ -430,6 +458,11 @@ body .movieModal .movieBox .frontImage {
   left: 40px;
   top: 40px;
   z-index: 4;
+}
+@media (max-width: 700px) {
+  body .movieModal .movieBox .frontImage {
+    display: none;
+  }
 }
 
 .show {
