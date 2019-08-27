@@ -332,8 +332,8 @@ body{
         width: 100vw;
         overflow: scroll;
         .movieBox{
-            width: 60%;
-            margin: 50px auto;
+            width: 50%;
+            margin: 30px auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             div.backdrop{
@@ -345,6 +345,7 @@ body{
                 .backgroundImage{
                     width: 100%;
                     height: 50vh;
+                    background-size: cover; 
                 }
                 .opacity{
                     position: absolute;
@@ -389,6 +390,7 @@ body{
                 .boxInfoContent{
                     margin: 20px 20px 20px calc(50% + 20px);
                     p{
+                        font-size: 14px;
                         text-align: justify;
                         text-justify: inter-word;
                     }

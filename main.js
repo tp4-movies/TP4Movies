@@ -29,7 +29,7 @@ const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
                 anchor.onclick = function(){
                     event.preventDefault()
                     showMovieInfo()
-                    fillModal(anchor.id)//aca va la funcion que crea el modal
+                    fillModal(anchor.id)
                 }
                 let figure = document.createElement('figure')
                 let image = document.createElement('img')
@@ -233,7 +233,7 @@ const innerHTMLCleaner = (containerId) =>{
     container.innerHTML = ''
 }
 
-//funcion que hizo Mike del search autocomplete
+//Funcion que hizo Mike del search autocomplete
 const handleSearch = () =>{
     let query = event.target.value
     if (query.length >= 2 || (event.keyCode === 13 && query !== lastRequest)) {
@@ -307,9 +307,8 @@ const printOverview = overview =>{
 
 const prinReleaseDate = release_date =>{
     let releaseDate = document.getElementById('releaseDate')
-    releaseDate.innerText = release_date
+    releaseDate.innerText = `${release_date.slice(8,10)}- ${release_date.slice(5,7)}- ${release_date.slice(0,4)}`
     } 
-
 
 const printGenre = genres => {
     let modalGenre = document.getElementById('genre')
