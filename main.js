@@ -149,7 +149,6 @@ const showMovieInfo = () =>{
 
 const searchMovieOnclick = () =>{
     searchMovie()
-    hideElement('searchAutocomplete')
 }
 
 const searchFetch = (containerId, apiString) =>{
@@ -237,40 +236,14 @@ const innerHTMLCleaner = (containerId) =>{
 const handleSearch = () =>{
     let query = event.target.value
     if (query.length >= 2 || (event.keyCode === 13 && query !== lastRequest)) {
-        showElement('searchAutocomplete')
 		lastRequest = query;
 		fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`)
 			.then((res) => res.json())
 			.then((res) => {
-                printQueryResults(res.results)
                 searchMovie()
             })
     }
-    if(event.keyCode === 13){
-        hideElement('searchAutocomplete')
-    }
 }
-
-const printQueryResults = (results) => {
-	const container = document.getElementById('searchAutocomplete');
-	container.innerHTML = '';
-	results.forEach((result, index) => {
-        if(index < 10){
-            let movie = document.createElement('a');
-            let li = document.createElement('li')
-            let title = result.title === result.original_title ? result.title : `${result.title} (${result.original_title})`;
-            movie.innerText = title;
-            movie.href = '#';
-            movie.onclick = () =>{
-                showMovieInfo()
-                fillModal(result.id)
-                innerHTMLCleaner('searchAutocomplete')
-            } 
-            li.appendChild(movie)
-            container.appendChild(li);
-        }
-	});
-};
 
 // FUNCION PARA LLENAR EL MODAL
 const fillModal = peliculaId =>{
