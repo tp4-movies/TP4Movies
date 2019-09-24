@@ -335,6 +335,7 @@ body{
             width: 50%;
             margin: 30px auto;
             display: grid;
+            // SEÑORA QUE HACE METIENDO GRID <3
             grid-template-columns: 1fr 1fr;
             @media (max-width: $small-break){
                 margin: 0;
