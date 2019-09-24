@@ -13,6 +13,7 @@ const initialize = () =>{
 }
 
 const fetchMoviePosters = (containerId, category, numbersArray, page) =>{
+    // numbersArray debería ser un número y no una lista y usarse con un for para la iteración, es más performante y un mejor uso funcional
     let container = document.getElementById(containerId)
     fetch(`https://api.themoviedb.org/3/movie/${category}?api_key=${apiKey}&page=${page}`)
         .then(res=>res.json())
@@ -211,6 +212,9 @@ const toggleMenu = () =>{
     let menu = document.getElementById('featureNav')
     menu.classList.toggle('hide')
 }
+
+// como remcomendación, se podría hacer una sola funcion que haga un toggle con una sola clase que solo oculta el elmento, en lugar de tener dos.
+// es nitpicking no más, está muy bueno lo que hicieron
 
 const showElement = (elementId) =>{
     let element = document.getElementById(elementId)
